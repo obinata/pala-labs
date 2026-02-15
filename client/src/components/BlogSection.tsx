@@ -75,11 +75,11 @@ export function BlogSection() {
     <section
       id="blog"
       data-testid="section-blog"
-      className="relative py-40 md:py-56"
+      className="relative py-20 md:py-40"
     >
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         <Reveal>
-          <p className="text-[11px] tracking-[0.3em] uppercase text-foreground/30 mb-16">
+          <p className="text-[11px] tracking-[0.3em] uppercase text-foreground/30 mb-10 md:mb-16">
             {t("Blog", "ブログ")}
           </p>
         </Reveal>

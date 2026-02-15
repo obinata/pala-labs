@@ -9,7 +9,7 @@ export function FooterSection() {
     <footer
       id="contact"
       data-testid="section-footer"
-      className="relative py-32 md:py-40"
+      className="relative py-16 md:py-40"
     >
       <div
         ref={ref}
