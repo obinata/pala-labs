@@ -29,7 +29,7 @@ function Reveal({
 
 const socialLinks = [
   {
-    label: "X / Twitter",
+    label: "@pala_labs",
     url: "https://twitter.com/pala_labs",
     icon: SiX,
   },
