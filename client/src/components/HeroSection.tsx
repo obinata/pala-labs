@@ -16,13 +16,19 @@ export function HeroSection() {
       data-testid="section-hero"
       className="relative h-screen flex items-end pb-24 md:pb-32 overflow-hidden"
     >
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[55%] md:w-[40%] h-[70%] pointer-events-none mix-blend-multiply">
+      <div
+        className={`absolute right-0 top-1/2 -translate-y-1/2 w-[55%] md:w-[40%] h-[70%] pointer-events-none transition-all duration-[2s] delay-500 ease-out ${
+          mounted ? "opacity-100 scale-100" : "opacity-0 scale-95"
+        }`}
+      >
         <img
           src={heroArtwork}
           alt=""
           className="w-full h-full object-contain object-right"
+          style={{
+            filter: "drop-shadow(0 0 40px hsl(40 5% 97%)) drop-shadow(0 0 80px hsl(40 5% 97%))",
+          }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent opacity-40" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
