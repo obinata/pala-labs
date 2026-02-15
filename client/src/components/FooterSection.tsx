@@ -1,5 +1,25 @@
 import { useLang } from "@/lib/i18n";
 import { useScrollReveal } from "@/lib/useScrollReveal";
+import { ArrowUpRight } from "lucide-react";
+import { SiX, SiGithub } from "react-icons/si";
+
+const footerLinks = [
+  {
+    label: "@pala_labs",
+    url: "https://twitter.com/pala_labs",
+    icon: SiX,
+  },
+  {
+    label: "GitHub",
+    url: "https://github.com/palalabs",
+    icon: SiGithub,
+  },
+  {
+    label: "Events",
+    url: "https://lu.ma/pala_labs",
+    icon: null,
+  },
+];
 
 export function FooterSection() {
   const { t } = useLang();
@@ -35,34 +55,21 @@ export function FooterSection() {
               <p className="text-[13px] text-foreground/30">
                 contact [at] palalabs.org
               </p>
-              <div className="flex gap-6">
-                <a
-                  href="https://twitter.com/pala_labs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[11px] tracking-[0.15em] uppercase text-foreground/25 hover:text-foreground/60 transition-colors duration-500"
-                  data-testid="link-twitter"
-                >
-                  X / Twitter
-                </a>
-                <a
-                  href="https://github.com/palalabs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[11px] tracking-[0.15em] uppercase text-foreground/25 hover:text-foreground/60 transition-colors duration-500"
-                  data-testid="link-github"
-                >
-                  GitHub
-                </a>
-                <a
-                  href="https://lu.ma/pala_labs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[11px] tracking-[0.15em] uppercase text-foreground/25 hover:text-foreground/60 transition-colors duration-500"
-                  data-testid="link-luma"
-                >
-                  Luma
-                </a>
+              <div className="flex items-center gap-5">
+                {footerLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-1.5 text-[11px] tracking-[0.15em] uppercase text-foreground/30 underline underline-offset-4 decoration-foreground/10 hover:text-foreground/60 hover:decoration-foreground/25 transition-colors duration-500"
+                    data-testid={`link-footer-${link.label.toLowerCase().replace(/[\s\/@]/g, "-")}`}
+                  >
+                    {link.icon && <link.icon className="w-3 h-3" />}
+                    <span>{link.label}</span>
+                    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </a>
+                ))}
               </div>
             </div>
           </div>
