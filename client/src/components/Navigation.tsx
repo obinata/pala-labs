@@ -48,7 +48,7 @@ export function Navigation() {
             <img
               src={logoImg}
               alt="PALA LABS"
-              className="h-4 w-auto"
+              className="h-6 w-auto"
               style={{ opacity: 0.8 }}
             />
           </a>
