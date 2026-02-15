@@ -39,7 +39,7 @@ const socialLinks = [
     icon: SiGithub,
   },
   {
-    label: "Luma",
+    label: "Events",
     url: "https://lu.ma/pala_labs",
     icon: null,
   },
