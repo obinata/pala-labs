@@ -16,7 +16,7 @@ export function HeroSection() {
       data-testid="section-hero"
       className="relative h-screen flex items-end pb-24 md:pb-32 overflow-hidden"
     >
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[55%] md:w-[40%] h-[70%] pointer-events-none">
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[55%] md:w-[40%] h-[70%] pointer-events-none mix-blend-multiply">
         <img
           src={heroArtwork}
           alt=""
