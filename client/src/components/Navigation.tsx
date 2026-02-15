@@ -1,5 +1,6 @@
 import { useLang } from "@/lib/i18n";
 import { useState, useEffect } from "react";
+import logoImg from "@assets/pala_labs_logo_original__1771175466212.png";
 
 export function Navigation() {
   const { lang, toggleLang, t } = useLang();
@@ -41,10 +42,15 @@ export function Navigation() {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className="text-[11px] font-medium tracking-[0.25em] uppercase text-foreground/80"
+            className="block"
             data-testid="link-home"
           >
-            PALA LABS
+            <img
+              src={logoImg}
+              alt="PALA LABS"
+              className="h-4 w-auto"
+              style={{ opacity: 0.8 }}
+            />
           </a>
 
           <div className="hidden md:flex items-center gap-8">

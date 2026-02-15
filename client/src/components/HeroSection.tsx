@@ -1,5 +1,6 @@
 import { useLang } from "@/lib/i18n";
 import { useEffect, useState } from "react";
+import heroArtwork from "@assets/241218_palalabs_artwork-11-m7V5NvxnEPTp5wNN_1771175440911.avif";
 
 export function HeroSection() {
   const { t } = useLang();
@@ -17,10 +18,10 @@ export function HeroSection() {
     >
       <div className="absolute inset-0">
         <img
-          src="/images/hero-ambient.png"
+          src={heroArtwork}
           alt=""
           className="w-full h-full object-cover"
-          style={{ opacity: 0.25 }}
+          style={{ opacity: 0.35 }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20" />
       </div>
