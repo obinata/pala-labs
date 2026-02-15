@@ -1,6 +1,6 @@
 import { useLang } from "@/lib/i18n";
 import { useEffect, useState } from "react";
-import heroArtwork from "@assets/241218_palalabs_artwork-11_(1)_1771176561615.jpg";
+import heroArtwork from "@assets/Print_-_Edited_1771177001358.png";
 
 export function HeroSection() {
   const { t } = useLang();
@@ -16,14 +16,13 @@ export function HeroSection() {
       data-testid="section-hero"
       className="relative h-screen flex items-end pb-24 md:pb-32 overflow-hidden"
     >
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[55%] md:w-[40%] h-[70%] pointer-events-none mix-blend-multiply">
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[55%] md:w-[40%] h-[70%] pointer-events-none">
         <img
           src={heroArtwork}
           alt=""
           className="w-full h-full object-contain object-right"
-          style={{ opacity: 0.7 }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent opacity-40" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
