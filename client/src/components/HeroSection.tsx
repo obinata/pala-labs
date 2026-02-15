@@ -25,15 +25,13 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20" />
       </div>
 
-      <div className="absolute inset-0 pointer-events-none grain-overlay" />
-
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
         <div
           className={`transition-all duration-[1.2s] ease-out ${
             mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          <h1 className="text-[clamp(2rem,5vw,4.5rem)] font-light leading-[1.1] tracking-[-0.02em] text-foreground max-w-2xl">
+          <h1 className="font-serif text-[clamp(2.5rem,6vw,5.5rem)] font-light leading-[1.05] tracking-[-0.01em] text-foreground max-w-2xl italic">
             {t(
               "Technology for sovereign individuals",
               "自律的な個人のためのテクノロジー"

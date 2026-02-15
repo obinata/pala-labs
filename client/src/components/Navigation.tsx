@@ -13,7 +13,7 @@ export function Navigation() {
   }, []);
 
   const navLinks = [
-    { href: "#about", label: t("About", "思想") },
+    { href: "#philosophy", label: t("Philosophy", "思想") },
     { href: "#work", label: t("Work", "活動") },
     { href: "#blog", label: t("Blog", "ブログ") },
   ];
@@ -60,7 +60,7 @@ export function Navigation() {
             ))}
             <button
               onClick={toggleLang}
-              className="text-[11px] tracking-[0.15em] uppercase text-foreground/40 transition-colors duration-500 hover:text-foreground/80"
+              className="text-[11px] tracking-[0.15em] uppercase border border-foreground/15 rounded-full px-3 py-1 text-foreground/40 transition-all duration-500 hover:text-foreground/80 hover:border-foreground/30"
               data-testid="button-lang-toggle"
             >
               {lang === "en" ? "JP" : "EN"}
@@ -70,7 +70,7 @@ export function Navigation() {
           <div className="flex md:hidden items-center gap-4">
             <button
               onClick={toggleLang}
-              className="text-[11px] tracking-[0.15em] uppercase text-foreground/40"
+              className="text-[11px] tracking-[0.15em] uppercase border border-foreground/15 rounded-full px-3 py-1 text-foreground/40"
               data-testid="button-lang-toggle-mobile"
             >
               {lang === "en" ? "JP" : "EN"}

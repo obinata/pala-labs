@@ -11,8 +11,6 @@ export function FooterSection() {
       data-testid="section-footer"
       className="relative py-32 md:py-40"
     >
-      <div className="absolute inset-0 pointer-events-none grain-overlay" />
-
       <div
         ref={ref}
         className={`relative max-w-7xl mx-auto px-6 md:px-12 transition-all duration-[1s] ease-out ${

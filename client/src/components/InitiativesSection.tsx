@@ -61,8 +61,6 @@ export function InitiativesSection() {
       data-testid="section-initiatives"
       className="relative py-40 md:py-56"
     >
-      <div className="absolute inset-0 pointer-events-none grain-overlay" />
-
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         <Reveal>
           <p className="text-[11px] tracking-[0.3em] uppercase text-foreground/30 mb-16">
@@ -76,7 +74,7 @@ export function InitiativesSection() {
               <div className="group py-10 border-t border-foreground/[0.06]">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-light text-foreground/80">
+                    <h3 className="font-serif text-3xl md:text-4xl font-light text-foreground/80 italic">
                       {lang === "en" ? item.titleEn : item.titleJa}
                     </h3>
                     <p className="mt-3 text-sm text-foreground/35 max-w-md leading-relaxed">

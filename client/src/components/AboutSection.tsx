@@ -29,23 +29,21 @@ export function AboutSection() {
 
   return (
     <section
-      id="about"
+      id="philosophy"
       data-testid="section-about"
       className="relative py-40 md:py-56"
     >
-      <div className="absolute inset-0 pointer-events-none grain-overlay" />
-
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         <Reveal>
           <p className="text-[11px] tracking-[0.3em] uppercase text-foreground/30 mb-16">
-            {t("About", "思想")}
+            {t("Philosophy", "思想")}
           </p>
         </Reveal>
 
         <div className="grid md:grid-cols-12 gap-12 md:gap-8">
           <div className="md:col-span-7">
             <Reveal delay={100}>
-              <p className="text-xl md:text-2xl font-light leading-relaxed text-foreground/80">
+              <p className="font-serif text-2xl md:text-3xl font-light leading-[1.4] text-foreground/80 italic">
                 {t(
                   "Technology should be a tool that empowers individuals to shape their own paths to freedom — it should not be a tool to control personal agency.",
                   "テクノロジーは個人が自由への道を切り開くためのツールであるべきであり、個人の主体性を管理するためのツールであってはなりません。"

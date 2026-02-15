@@ -43,7 +43,7 @@ function PostRow({ post, index }: { post: BlogPost; index: number }) {
       >
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
           <div className="flex-1 min-w-0">
-            <h3 className="text-lg font-light text-foreground/70 group-hover:text-foreground/90 transition-colors duration-500">
+            <h3 className="font-serif text-xl md:text-2xl font-light text-foreground/70 group-hover:text-foreground/90 transition-colors duration-500 italic">
               {title}
             </h3>
             <p className="mt-2 text-[13px] text-foreground/30 leading-relaxed max-w-lg line-clamp-2">
@@ -77,8 +77,6 @@ export function BlogSection() {
       data-testid="section-blog"
       className="relative py-40 md:py-56"
     >
-      <div className="absolute inset-0 pointer-events-none grain-overlay" />
-
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         <Reveal>
           <p className="text-[11px] tracking-[0.3em] uppercase text-foreground/30 mb-16">
@@ -90,7 +88,7 @@ export function BlogSection() {
           <div className="space-y-0">
             {[0, 1, 2].map((i) => (
               <div key={i} className="py-8 border-t border-foreground/[0.06] animate-pulse">
-                <div className="h-4 w-64 bg-foreground/[0.04] rounded" />
+                <div className="h-5 w-64 bg-foreground/[0.04] rounded" />
                 <div className="mt-3 h-3 w-96 bg-foreground/[0.03] rounded" />
               </div>
             ))}
