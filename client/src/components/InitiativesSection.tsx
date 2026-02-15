@@ -33,6 +33,7 @@ const works = [
     descJa: "Dr. Gavin WoodによるJAMプロトコルをフィーチャーしたグローバル教育イベント。",
     tagEn: "Education",
     tagJa: "教育",
+    image: null as string | null,
   },
   {
     titleEn: "Gray Paper Lectures",
@@ -41,6 +42,7 @@ const works = [
     descJa: "スタンフォード、東大、ETHチューリッヒ、NUS、SNU、UBAでの講義シリーズ。",
     tagEn: "Research",
     tagJa: "研究",
+    image: null as string | null,
   },
 ];
 
@@ -59,11 +61,11 @@ export function InitiativesSection() {
     <section
       id="work"
       data-testid="section-initiatives"
-      className="relative py-40 md:py-56"
+      className="relative py-20 md:py-40"
     >
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         <Reveal>
-          <p className="text-[11px] tracking-[0.3em] uppercase text-foreground/30 mb-16">
+          <p className="text-[11px] tracking-[0.3em] uppercase text-foreground/30 mb-10 md:mb-16">
             {t("Work", "活動")}
           </p>
         </Reveal>
@@ -71,19 +73,30 @@ export function InitiativesSection() {
         <div className="space-y-0">
           {works.map((item, i) => (
             <Reveal key={i} delay={i * 100}>
-              <div className="group py-10 border-t border-foreground/[0.06]">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
-                  <div>
-                    <h3 className="font-serif text-3xl md:text-4xl font-light text-foreground/80 italic">
-                      {lang === "en" ? item.titleEn : item.titleJa}
-                    </h3>
-                    <p className="mt-3 text-sm text-foreground/35 max-w-md leading-relaxed">
-                      {lang === "en" ? item.descEn : item.descJa}
-                    </p>
+              <div className="group py-8 md:py-10 border-t border-foreground/[0.06]">
+                <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+                  {item.image && (
+                    <div className="w-full md:w-40 shrink-0 aspect-[16/10] overflow-hidden rounded-sm">
+                      <img
+                        src={item.image}
+                        alt=""
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
+                  <div className="flex-1 flex flex-col md:flex-row md:items-start md:justify-between gap-3">
+                    <div>
+                      <h3 className="font-serif text-3xl md:text-4xl font-light text-foreground/80 italic">
+                        {lang === "en" ? item.titleEn : item.titleJa}
+                      </h3>
+                      <p className="mt-3 text-sm text-foreground/35 max-w-md leading-relaxed">
+                        {lang === "en" ? item.descEn : item.descJa}
+                      </p>
+                    </div>
+                    <span className="text-[10px] tracking-[0.2em] uppercase text-foreground/25 md:mt-2 shrink-0">
+                      {lang === "en" ? item.tagEn : item.tagJa}
+                    </span>
                   </div>
-                  <span className="text-[10px] tracking-[0.2em] uppercase text-foreground/25 md:mt-2 shrink-0">
-                    {lang === "en" ? item.tagEn : item.tagJa}
-                  </span>
                 </div>
               </div>
             </Reveal>
@@ -91,22 +104,22 @@ export function InitiativesSection() {
           <div className="border-t border-foreground/[0.06]" />
         </div>
 
-        <Reveal delay={200} className="mt-20">
-          <p className="text-[11px] tracking-[0.3em] uppercase text-foreground/30 mb-8">
+        <Reveal delay={200} className="mt-12 md:mt-20">
+          <p className="text-[11px] tracking-[0.3em] uppercase text-foreground/30 mb-6 md:mb-8">
             {t("Archive", "アーカイブ")}
           </p>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-x-6 gap-y-3">
             {links.map((link, i) => (
               <a
                 key={i}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-1.5 text-[12px] text-foreground/35 hover:text-foreground/70 transition-colors duration-500"
+                className="group inline-flex items-center gap-1.5 text-[12px] text-foreground/40 underline underline-offset-4 decoration-foreground/10 hover:text-foreground/70 hover:decoration-foreground/30 transition-colors duration-500"
                 data-testid={`link-archive-${i}`}
               >
                 <span>{lang === "en" ? link.titleEn : link.titleJa}</span>
-                <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <ArrowUpRight className="w-3 h-3" />
               </a>
             ))}
           </div>
