@@ -7,13 +7,16 @@ import { FooterSection } from "@/components/FooterSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
-      <HeroSection />
-      <AboutSection />
-      <InitiativesSection />
-      <BlogSection />
-      <FooterSection />
+    <div className="min-h-screen bg-background relative">
+      <div className="fixed inset-0 pointer-events-none grain-overlay z-[1]" />
+      <div className="relative z-[2]">
+        <Navigation />
+        <HeroSection />
+        <AboutSection />
+        <InitiativesSection />
+        <BlogSection />
+        <FooterSection />
+      </div>
     </div>
   );
 }
