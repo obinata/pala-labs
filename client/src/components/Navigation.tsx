@@ -1,6 +1,5 @@
 import { useLang } from "@/lib/i18n";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
 
 export function Navigation() {
   const { lang, toggleLang, t } = useLang();
@@ -15,9 +14,8 @@ export function Navigation() {
 
   const navLinks = [
     { href: "#about", label: t("About", "思想") },
-    { href: "#initiatives", label: t("Initiatives", "活動") },
+    { href: "#work", label: t("Work", "活動") },
     { href: "#blog", label: t("Blog", "ブログ") },
-    { href: "#contact", label: t("Contact", "連絡先") },
   ];
 
   const scrollTo = (href: string) => {
@@ -29,21 +27,21 @@ export function Navigation() {
   return (
     <nav
       data-testid="navigation"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border/50"
+          ? "bg-background/70 backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 md:px-10">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="flex items-center justify-between h-14">
           <a
             href="#"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className="text-sm font-medium tracking-widest uppercase text-foreground"
+            className="text-[11px] font-medium tracking-[0.25em] uppercase text-foreground/80"
             data-testid="link-home"
           >
             PALA LABS
@@ -54,7 +52,7 @@ export function Navigation() {
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
-                className="text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground"
+                className="text-[11px] tracking-[0.15em] uppercase text-foreground/40 transition-colors duration-500 hover:text-foreground/80"
                 data-testid={`link-${link.href.slice(1)}`}
               >
                 {link.label}
@@ -62,48 +60,50 @@ export function Navigation() {
             ))}
             <button
               onClick={toggleLang}
-              className="text-xs tracking-wider border border-border/60 rounded-md px-3 py-1.5 text-muted-foreground transition-all duration-300 hover:text-foreground hover:border-foreground/30"
+              className="text-[11px] tracking-[0.15em] uppercase text-foreground/40 transition-colors duration-500 hover:text-foreground/80"
               data-testid="button-lang-toggle"
             >
-              {lang === "en" ? "日本語" : "EN"}
+              {lang === "en" ? "JP" : "EN"}
             </button>
           </div>
 
-          <div className="flex md:hidden items-center gap-3">
+          <div className="flex md:hidden items-center gap-4">
             <button
               onClick={toggleLang}
-              className="text-xs tracking-wider border border-border/60 rounded-md px-3 py-1.5 text-muted-foreground"
+              className="text-[11px] tracking-[0.15em] uppercase text-foreground/40"
               data-testid="button-lang-toggle-mobile"
             >
-              {lang === "en" ? "日本語" : "EN"}
+              {lang === "en" ? "JP" : "EN"}
             </button>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="text-foreground"
+              className="text-[11px] tracking-[0.15em] uppercase text-foreground/40"
               data-testid="button-mobile-menu"
             >
-              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileOpen ? "Close" : "Menu"}
             </button>
           </div>
         </div>
       </div>
 
-      {mobileOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-md border-b border-border/50">
-          <div className="px-6 py-4 flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => scrollTo(link.href)}
-                className="text-left text-sm text-muted-foreground hover:text-foreground transition-colors"
-                data-testid={`link-mobile-${link.href.slice(1)}`}
-              >
-                {link.label}
-              </button>
-            ))}
-          </div>
+      <div
+        className={`md:hidden transition-all duration-500 overflow-hidden ${
+          mobileOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="px-6 py-6 flex flex-col gap-5 bg-background/90 backdrop-blur-md">
+          {navLinks.map((link) => (
+            <button
+              key={link.href}
+              onClick={() => scrollTo(link.href)}
+              className="text-left text-[11px] tracking-[0.15em] uppercase text-foreground/40 hover:text-foreground/80 transition-colors"
+              data-testid={`link-mobile-${link.href.slice(1)}`}
+            >
+              {link.label}
+            </button>
+          ))}
         </div>
-      )}
+      </div>
     </nav>
   );
 }

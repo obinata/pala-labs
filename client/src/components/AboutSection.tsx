@@ -1,7 +1,7 @@
 import { useLang } from "@/lib/i18n";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 
-function RevealBlock({
+function Reveal({
   children,
   delay = 0,
   className = "",
@@ -10,14 +10,12 @@ function RevealBlock({
   delay?: number;
   className?: string;
 }) {
-  const { ref, isVisible } = useScrollReveal(0.1);
+  const { ref, isVisible } = useScrollReveal(0.15);
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-out ${
-        isVisible
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-6"
+      className={`transition-all duration-[1s] ease-out ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       } ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
@@ -33,79 +31,50 @@ export function AboutSection() {
     <section
       id="about"
       data-testid="section-about"
-      className="relative py-32 md:py-40"
+      className="relative py-40 md:py-56"
     >
       <div className="absolute inset-0 pointer-events-none grain-overlay" />
 
-      <div className="relative max-w-6xl mx-auto px-6 md:px-10">
-        <RevealBlock>
-          <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
-            {t("Philosophy", "思想哲学")}
+      <div className="relative max-w-7xl mx-auto px-6 md:px-12">
+        <Reveal>
+          <p className="text-[11px] tracking-[0.3em] uppercase text-foreground/30 mb-16">
+            {t("About", "思想")}
           </p>
-          <h2 className="text-3xl md:text-5xl font-light leading-tight tracking-tight text-foreground max-w-3xl">
-            {t(
-              "Dedicated to empowering human agency through sovereign technology.",
-              "ソブリンテクノロジーを通じて人間の主体性を高めることに専念しています。"
-            )}
-          </h2>
-        </RevealBlock>
+        </Reveal>
 
-        <div className="mt-20 grid md:grid-cols-2 gap-16 md:gap-24">
-          <div className="space-y-12">
-            <RevealBlock delay={100}>
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                {t(
-                  "In a time when technology has an unparalleled impact on society, we believe it is crucial to prioritize a philosophy rooted in humanity and a long-term vision. We need people's technology.",
-                  "テクノロジーが社会に計り知れない影響を与える現代において、人間性に根ざした哲学と長期的なビジョンを優先することが極めて重要だと私たちは信じています。私たちが必要としているのは、人々のテクノロジーです。"
-                )}
-              </p>
-            </RevealBlock>
-
-            <RevealBlock delay={200}>
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+        <div className="grid md:grid-cols-12 gap-12 md:gap-8">
+          <div className="md:col-span-7">
+            <Reveal delay={100}>
+              <p className="text-xl md:text-2xl font-light leading-relaxed text-foreground/80">
                 {t(
                   "Technology should be a tool that empowers individuals to shape their own paths to freedom — it should not be a tool to control personal agency.",
                   "テクノロジーは個人が自由への道を切り開くためのツールであるべきであり、個人の主体性を管理するためのツールであってはなりません。"
                 )}
               </p>
-            </RevealBlock>
+            </Reveal>
 
-            <RevealBlock delay={300}>
-              <div className="border-l-2 border-foreground/10 pl-6">
-                <p className="text-sm text-muted-foreground leading-relaxed italic">
-                  {t(
-                    "Many of the lessons we found in Huxley are consistent with the philosophies of the hippies, hackers and cypherpunks who came after Huxley's time. We see technologies like Bitcoin and Web3 in its original vision as extensions of those principles.",
-                    "ハクスリーから学んだ教訓の多くは、ハクスリー以降に登場したヒッピー、ハッカー、サイファーパンクの哲学と一致しています。私たちはビットコインや本来のWeb3のビジョンを、それらの原則の延長として捉えています。"
-                  )}
-                </p>
-              </div>
-            </RevealBlock>
+            <Reveal delay={250}>
+              <p className="mt-12 text-sm text-foreground/35 leading-[1.8] max-w-lg">
+                {t(
+                  'The name "Pala" draws from Aldous Huxley\'s final novel Island (1962) — a harmonious world where Eastern philosophy and Western science coexist. In contrast to the dystopia of Brave New World, Island represents an alternative vision that resonates with the philosophies of hippies, hackers and cypherpunks.',
+                  "「Pala」という名前はオルダス・ハクスリーの最後の小説『島』（1962年）に由来します。東洋哲学と西洋科学が共存する調和的な世界です。『すばらしい新世界』のディストピアとは対照的に、ヒッピー、ハッカー、サイファーパンクの哲学と共鳴するオルタナティブなビジョンを表しています。"
+                )}
+              </p>
+            </Reveal>
           </div>
 
-          <RevealBlock delay={200} className="flex flex-col justify-center">
-            <div className="relative">
-              <img
-                src="/images/about-ambient.png"
-                alt="Pala Labs visual"
-                className="w-full rounded-md opacity-80"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent rounded-md" />
-            </div>
-
-            <div className="mt-8 space-y-4">
-              <RevealBlock delay={400}>
-                <h3 className="text-lg font-medium text-foreground">
-                  {t("The Name", "名前の由来")}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mt-2">
-                  {t(
-                    '"Pala" draws inspiration from Aldous Huxley\'s final novel, Island (1962). The fictional island of Pala is a harmonious world where Eastern philosophy and Western science coexist — valuing human happiness over technological advancement without ethics.',
-                    "「Pala」はオルダス・ハクスリーの最後の小説『島』（1962年）からインスピレーションを得ています。架空の島パラは、東洋の哲学と西洋の科学が共存する調和的な世界であり、倫理なきテクノロジーの進歩よりも人間の幸福を重んじる場所です。"
-                  )}
-                </p>
-              </RevealBlock>
-            </div>
-          </RevealBlock>
+          <div className="md:col-span-5 md:col-start-8">
+            <Reveal delay={300}>
+              <div className="relative aspect-[3/4] overflow-hidden rounded-sm">
+                <img
+                  src="/images/about-ambient.png"
+                  alt=""
+                  className="w-full h-full object-cover"
+                  style={{ opacity: 0.7 }}
+                />
+              </div>
+            </Reveal>
+          </div>
         </div>
       </div>
     </section>
