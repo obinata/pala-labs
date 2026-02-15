@@ -16,14 +16,14 @@ export function HeroSection() {
       data-testid="section-hero"
       className="relative h-screen flex items-end pb-24 md:pb-32 overflow-hidden"
     >
-      <div className="absolute inset-0">
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[45%] md:w-[35%] h-[60%] pointer-events-none">
         <img
           src={heroArtwork}
           alt=""
-          className="w-full h-full object-cover"
-          style={{ opacity: 0.35 }}
+          className="w-full h-full object-contain object-right"
+          style={{ opacity: 0.2 }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
