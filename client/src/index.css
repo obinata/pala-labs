@@ -175,35 +175,47 @@
   }
 }
 
+.hero-artwork {
+  animation: artwork-breathe 12s ease-in-out infinite alternate;
+}
+
+@keyframes artwork-breathe {
+  0% {
+    opacity: 0.85;
+    transform: translateY(-50%) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.03);
+  }
+}
+
 .ambient-glow {
-  background-size: 400% 400%;
+  background-size: 300% 300%;
   background-image:
-    radial-gradient(ellipse 50% 40% at 20% 20%, hsla(255, 30%, 60%, 0.35) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 50% at 80% 20%, hsla(215, 35%, 55%, 0.30) 0%, transparent 65%),
-    radial-gradient(ellipse 35% 35% at 50% 55%, hsla(25, 45%, 60%, 0.28) 0%, transparent 55%),
-    radial-gradient(ellipse 45% 40% at 85% 75%, hsla(275, 25%, 50%, 0.25) 0%, transparent 65%),
-    radial-gradient(ellipse 40% 40% at 10% 80%, hsla(185, 30%, 50%, 0.22) 0%, transparent 60%);
-  animation: ambient-drift 20s ease-in-out infinite alternate;
+    radial-gradient(circle 600px at 20% 30%, hsla(255, 35%, 55%, 0.45) 0%, transparent 60%),
+    radial-gradient(circle 500px at 80% 20%, hsla(215, 40%, 50%, 0.40) 0%, transparent 55%),
+    radial-gradient(circle 450px at 50% 60%, hsla(25, 50%, 55%, 0.38) 0%, transparent 50%),
+    radial-gradient(circle 550px at 85% 80%, hsla(275, 30%, 48%, 0.35) 0%, transparent 55%),
+    radial-gradient(circle 500px at 10% 85%, hsla(185, 35%, 48%, 0.30) 0%, transparent 55%);
+  animation: ambient-drift 15s ease-in-out infinite alternate;
 }
 
 @keyframes ambient-drift {
   0% {
     background-position: 0% 0%;
   }
-  20% {
-    background-position: 40% 20%;
+  25% {
+    background-position: 50% 25%;
   }
-  40% {
-    background-position: 10% 50%;
+  50% {
+    background-position: 25% 60%;
   }
-  60% {
-    background-position: 60% 30%;
-  }
-  80% {
-    background-position: 20% 60%;
+  75% {
+    background-position: 70% 35%;
   }
   100% {
-    background-position: 50% 10%;
+    background-position: 30% 70%;
   }
 }
 
