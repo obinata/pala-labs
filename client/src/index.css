@@ -179,12 +179,15 @@
   background-size: 300% 300%;
   background-image:
     radial-gradient(circle 600px at 20% 30%, hsla(255, 35%, 55%, 0.45) 0%, transparent 60%),
-    radial-gradient(circle 500px at 80% 20%, hsla(215, 40%, 50%, 0.40) 0%, transparent 55%),
+    radial-gradient(circle 500px at 75% 15%, hsla(215, 40%, 50%, 0.40) 0%, transparent 55%),
     radial-gradient(circle 450px at 50% 60%, hsla(25, 50%, 55%, 0.38) 0%, transparent 50%),
-    radial-gradient(circle 550px at 85% 80%, hsla(275, 30%, 48%, 0.35) 0%, transparent 55%),
-    radial-gradient(circle 500px at 10% 85%, hsla(185, 35%, 48%, 0.30) 0%, transparent 55%);
+    radial-gradient(circle 550px at 85% 80%, hsla(340, 30%, 55%, 0.35) 0%, transparent 55%),
+    radial-gradient(circle 500px at 10% 85%, hsla(155, 30%, 45%, 0.32) 0%, transparent 55%),
+    radial-gradient(circle 480px at 60% 45%, hsla(185, 35%, 48%, 0.28) 0%, transparent 50%),
+    radial-gradient(circle 520px at 35% 75%, hsla(320, 25%, 50%, 0.30) 0%, transparent 55%);
   animation: ambient-drift-1 45s ease-in-out infinite alternate,
-             ambient-drift-2 60s ease-in-out infinite alternate-reverse;
+             ambient-drift-2 60s ease-in-out infinite alternate-reverse,
+             ambient-hue 80s linear infinite;
 }
 
 @keyframes ambient-drift-1 {
@@ -204,6 +207,11 @@
   30%  { background-size: 320% 310%; }
   60%  { background-size: 290% 320%; }
   100% { background-size: 310% 290%; }
+}
+
+@keyframes ambient-hue {
+  0%   { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
 }
 
 .grain-overlay {

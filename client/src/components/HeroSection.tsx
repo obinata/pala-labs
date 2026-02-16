@@ -17,8 +17,8 @@ export function HeroSection() {
       className="relative h-screen flex items-end pb-24 md:pb-32 overflow-hidden"
     >
       <div
-        className={`absolute right-0 top-1/2 -translate-y-1/2 w-[55%] md:w-[40%] h-[70%] pointer-events-none transition-all duration-[4s] delay-500 ease-out ${
-          mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+        className={`absolute right-0 top-1/2 -translate-y-1/2 w-[55%] md:w-[40%] h-[70%] pointer-events-none transition-opacity duration-[4s] delay-700 ease-out ${
+          mounted ? "opacity-100" : "opacity-0"
         }`}
       >
         <img
