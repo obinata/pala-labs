@@ -88,8 +88,8 @@ export function Navigation() {
               href={link.href}
               className={`text-[10px] tracking-[0.2em] uppercase transition-colors duration-300 ${
                 location === link.href
-                  ? "text-foreground/70"
-                  : "text-foreground/30 hover:text-foreground/60"
+                  ? "text-foreground/80"
+                  : "text-foreground/50 hover:text-foreground/70"
               }`}
               data-testid={`link-mobile-${link.href.slice(1)}`}
             >
