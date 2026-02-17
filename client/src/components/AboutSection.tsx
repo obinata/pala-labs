@@ -65,7 +65,7 @@ export function AboutSection() {
 
           <div className="md:col-span-5 md:col-start-8">
             <Reveal delay={300}>
-              <div className="relative aspect-[3/4] overflow-hidden rounded-sm max-w-[360px] ml-auto">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-sm max-w-[220px] md:max-w-[360px] ml-auto">
                 <img
                   src={philosophyImg}
                   alt=""
@@ -77,19 +77,7 @@ export function AboutSection() {
         </div>
 
         <div className="grid md:grid-cols-12 gap-10 md:gap-12">
-          <div className="md:col-span-5">
-            <Reveal delay={100}>
-              <div className="relative aspect-[3/4] overflow-hidden rounded-sm max-w-[360px]">
-                <img
-                  src={bookImg}
-                  alt="Island and Brave New World by Aldous Huxley"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </Reveal>
-          </div>
-
-          <div className="md:col-span-7 md:col-start-6">
+          <div className="md:col-span-7 md:col-start-1 order-1 md:order-2">
             <Reveal delay={200}>
               <div className="text-sm text-foreground/50 leading-[1.8] max-w-lg space-y-6">
                 <p>
@@ -110,6 +98,18 @@ export function AboutSection() {
                     "ハクスリーから得た教訓の多くは、彼の時代以降に現れたヒッピー、ハッカー、サイファーパンクの哲学と一致しています。ビットコインやWeb3のオリジナルビジョンは、それらの原則の延長線上にあると考えています。"
                   )}
                 </p>
+              </div>
+            </Reveal>
+          </div>
+
+          <div className="md:col-span-5 order-2 md:order-1">
+            <Reveal delay={100}>
+              <div className="relative aspect-[3/4] overflow-hidden rounded-sm max-w-[220px] md:max-w-[360px]">
+                <img
+                  src={bookImg}
+                  alt="Island and Brave New World by Aldous Huxley"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </Reveal>
           </div>
