@@ -39,7 +39,7 @@ export function HeroSection() {
         >
           <h1 className="font-serif text-[clamp(2.5rem,6vw,5.5rem)] font-light leading-[1.05] tracking-[-0.01em] text-foreground max-w-2xl italic">
             {t(
-              "Self-sovereign tools for sovereign individuals",
+              "Pursuing a self-sovereign future for sovereign individuals",
               "自律的な個人のためのテクノロジー"
             )}
           </h1>
