@@ -1,11 +1,13 @@
 import { useLang } from "@/lib/i18n";
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "wouter";
 import logoImg from "@assets/pala_labs_logo_original__1771175466212.png";
 
 export function Navigation() {
   const { lang, toggleLang, t } = useLang();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -14,16 +16,10 @@ export function Navigation() {
   }, []);
 
   const navLinks = [
-    { href: "#philosophy", label: t("Philosophy", "思想") },
-    { href: "#work", label: t("Work", "活動") },
-    { href: "#blog", label: t("Blog", "ブログ") },
+    { href: "/philosophy", label: t("Philosophy", "思想") },
+    { href: "/work", label: t("Work", "活動") },
+    { href: "/blog", label: t("Blog", "ブログ") },
   ];
-
-  const scrollTo = (href: string) => {
-    setMobileOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <nav
@@ -36,12 +32,8 @@ export function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-14">
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
+          <Link
+            href="/"
             className="block"
             data-testid="link-home"
           >
@@ -51,18 +43,22 @@ export function Navigation() {
               className="h-6 w-auto"
               style={{ opacity: 0.8 }}
             />
-          </a>
+          </Link>
 
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <button
+              <Link
                 key={link.href}
-                onClick={() => scrollTo(link.href)}
-                className="text-[11px] tracking-[0.15em] uppercase text-foreground/40 transition-colors duration-500 hover:text-foreground/80"
+                href={link.href}
+                className={`text-[11px] tracking-[0.15em] uppercase transition-colors duration-500 ${
+                  location === link.href
+                    ? "text-foreground/80"
+                    : "text-foreground/40 hover:text-foreground/80"
+                }`}
                 data-testid={`link-${link.href.slice(1)}`}
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
             <button
               onClick={toggleLang}
@@ -99,14 +95,19 @@ export function Navigation() {
       >
         <div className="px-6 py-6 flex flex-col gap-5 bg-background/90 backdrop-blur-md">
           {navLinks.map((link) => (
-            <button
+            <Link
               key={link.href}
-              onClick={() => scrollTo(link.href)}
-              className="text-left text-[11px] tracking-[0.15em] uppercase text-foreground/40 hover:text-foreground/80 transition-colors"
+              href={link.href}
+              onClick={() => setMobileOpen(false)}
+              className={`text-left text-[11px] tracking-[0.15em] uppercase transition-colors ${
+                location === link.href
+                  ? "text-foreground/80"
+                  : "text-foreground/40 hover:text-foreground/80"
+              }`}
               data-testid={`link-mobile-${link.href.slice(1)}`}
             >
               {link.label}
-            </button>
+            </Link>
           ))}
         </div>
       </div>
