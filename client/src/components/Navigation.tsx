@@ -6,7 +6,6 @@ import logoImg from "@assets/pala_labs_logo_original__1771175466212.png";
 export function Navigation() {
   const { lang, toggleLang, t } = useLang();
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
   const [location] = useLocation();
 
   useEffect(() => {
@@ -69,7 +68,7 @@ export function Navigation() {
             </button>
           </div>
 
-          <div className="flex md:hidden items-center gap-3">
+          <div className="flex md:hidden items-center">
             <button
               onClick={toggleLang}
               className="text-[11px] tracking-[0.15em] uppercase border border-foreground/15 rounded-full px-3 py-1 text-foreground/40"
@@ -77,42 +76,20 @@ export function Navigation() {
             >
               {lang === "en" ? "JP" : "EN"}
             </button>
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="relative w-8 h-8 flex flex-col items-center justify-center gap-[5px]"
-              data-testid="button-mobile-menu"
-              aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            >
-              <span
-                className={`block w-4 h-[1px] bg-foreground/50 transition-all duration-300 ${
-                  mobileOpen ? "rotate-45 translate-y-[3px]" : ""
-                }`}
-              />
-              <span
-                className={`block w-4 h-[1px] bg-foreground/50 transition-all duration-300 ${
-                  mobileOpen ? "-rotate-45 -translate-y-[3px]" : ""
-                }`}
-              />
-            </button>
           </div>
         </div>
       </div>
 
-      <div
-        className={`md:hidden transition-all duration-500 overflow-hidden ${
-          mobileOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="px-6 pt-2 pb-8 flex flex-col gap-0 bg-background/95 backdrop-blur-md border-t border-foreground/[0.06]">
+      <div className="md:hidden">
+        <div className="max-w-7xl mx-auto px-6 flex items-center gap-6 pb-2">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className={`py-4 border-b border-foreground/[0.04] text-[12px] tracking-[0.2em] uppercase transition-colors duration-300 ${
+              className={`text-[10px] tracking-[0.2em] uppercase transition-colors duration-300 ${
                 location === link.href
-                  ? "text-foreground/80"
-                  : "text-foreground/35 hover:text-foreground/70"
+                  ? "text-foreground/70"
+                  : "text-foreground/30 hover:text-foreground/60"
               }`}
               data-testid={`link-mobile-${link.href.slice(1)}`}
             >
