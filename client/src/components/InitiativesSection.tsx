@@ -135,7 +135,7 @@ export function InitiativesSection() {
                     )}
                   </div>
                   {item.image && (
-                    <div className="md:hidden w-full aspect-[16/10] overflow-hidden rounded-sm">
+                    <div className="md:hidden w-32 aspect-[16/10] overflow-hidden rounded-sm shrink-0">
                       <img
                         src={item.image}
                         alt=""
