@@ -2,6 +2,7 @@ import { useLang } from "@/lib/i18n";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 import { ArrowUpRight } from "lucide-react";
 import jamTourImg from "@assets/photo_2025-03-18_19-24-50-A85e30GQZ8U8KJGX_1771355653589.avif";
+import grayPaperImg from "@assets/img_5761-AGBn1PJVoaSLZob8_1771355767555.avif";
 
 function Reveal({
   children,
@@ -61,7 +62,7 @@ const works = [
     tagEn: "Education",
     tagJa: "教育",
     link: null as string | null,
-    image: null as string | null,
+    image: grayPaperImg as string | null,
   },
 ];
 
