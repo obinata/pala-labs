@@ -29,7 +29,7 @@ export function FooterSection({ compact = false }: { compact?: boolean }) {
     <footer
       id="contact"
       data-testid="section-footer"
-      className={compact ? "relative py-6" : "relative py-10 md:py-20"}
+      className={compact ? "relative py-4" : "relative py-6 md:py-10"}
     >
       <div
         ref={ref}
@@ -37,7 +37,7 @@ export function FooterSection({ compact = false }: { compact?: boolean }) {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <div className={`border-t border-foreground/[0.06] ${compact ? "pt-6" : "pt-10"}`}>
+        <div className={`border-t border-foreground/[0.06] ${compact ? "pt-4" : "pt-6"}`}>
           {!compact && (
             <div className="flex flex-col md:flex-row md:justify-between gap-8 mb-8">
               <div>
