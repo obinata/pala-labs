@@ -17,7 +17,7 @@ export function HeroSection() {
       className="relative h-screen flex items-end pb-24 md:pb-32 overflow-hidden"
     >
       <div
-        className={`absolute right-0 top-1/2 -translate-y-1/2 w-[55%] md:w-[40%] h-[70%] pointer-events-none transition-opacity duration-[18s] delay-200 ease-out ${
+        className={`absolute right-0 top-[15%] md:top-1/2 md:-translate-y-1/2 w-[60%] md:w-[40%] h-[45%] md:h-[70%] pointer-events-none transition-opacity duration-[18s] delay-200 ease-out ${
           mounted ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -37,7 +37,7 @@ export function HeroSection() {
             mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          <h1 className="font-serif text-[clamp(2rem,4.5vw,4rem)] font-light leading-[1.05] tracking-[-0.01em] text-foreground max-w-2xl italic">
+          <h1 className="font-serif text-[clamp(1.8rem,4.5vw,4rem)] font-light leading-[1.1] tracking-[-0.01em] text-foreground max-w-2xl italic">
             {t(
               "Pursuing a self-sovereign future for sovereign individuals",
               "自律的な個人のためのテクノロジー"
