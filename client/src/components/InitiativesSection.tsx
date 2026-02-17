@@ -1,6 +1,7 @@
 import { useLang } from "@/lib/i18n";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 import { ArrowUpRight } from "lucide-react";
+import jamTourImg from "@assets/photo_2025-03-18_19-24-50-A85e30GQZ8U8KJGX_1771355653589.avif";
 
 function Reveal({
   children,
@@ -35,6 +36,8 @@ const works = [
     descJa: "厳選されたデータと専門家の分析を通じて徹底的な透明性を実現。Polkadotガバナンスの進化を理解し、ナビゲートするための必要不可欠なコンテクストを提供します。",
     tagEn: "Tool",
     tagJa: "ツール",
+    link: "https://openshore.io/",
+    image: null as string | null,
   },
   {
     titleEn: "JAM Tour",
@@ -45,6 +48,8 @@ const works = [
     descJa: "Dr. Gavin WoodによるJAMプロトコルをフィーチャーしたグローバル教育ツアー。ケンブリッジ、インド、台湾、香港、中国を含む世界的に有名な大学9カ所で開催。1,300人以上の参加者を集め、これまでに50万回以上の視聴を記録しています。",
     tagEn: "Education",
     tagJa: "教育",
+    link: null as string | null,
+    image: jamTourImg as string | null,
   },
   {
     titleEn: "Gray Paper Lectures",
@@ -55,6 +60,8 @@ const works = [
     descJa: "スタンフォード、シンガポールNUS、東大、ETHチューリッヒ、ソウル大学を含む名門機関で行われた学術講義シリーズ。このイニシアチブは、JAM仕様の実現に取り組む15以上の独立した実装チームを惹きつけることに成功しました。",
     tagEn: "Education",
     tagJa: "教育",
+    link: null as string | null,
+    image: null as string | null,
   },
 ];
 
@@ -86,23 +93,46 @@ export function InitiativesSection() {
           {works.map((item, i) => (
             <Reveal key={i} delay={i * 100}>
               <div className="group py-8 md:py-10 border-t border-foreground/[0.06]">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
-                  <div className="flex-1">
-                    <h3 className="font-serif text-3xl md:text-4xl font-light text-foreground/80 italic">
-                      {lang === "en" ? item.titleEn : item.titleJa}
-                    </h3>
-                    {item.subtitleEn && (
-                      <p className="mt-1 text-[12px] tracking-[0.1em] uppercase text-foreground/40">
-                        {lang === "en" ? item.subtitleEn : item.subtitleJa}
+                <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+                  {item.image && (
+                    <div className="w-full md:w-48 shrink-0 aspect-[16/10] overflow-hidden rounded-sm">
+                      <img
+                        src={item.image}
+                        alt=""
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
+                  <div className="flex-1 flex flex-col md:flex-row md:items-start md:justify-between gap-3">
+                    <div>
+                      <h3 className="font-serif text-3xl md:text-4xl font-light text-foreground/80 italic">
+                        {lang === "en" ? item.titleEn : item.titleJa}
+                      </h3>
+                      {item.subtitleEn && (
+                        <p className="mt-1 text-[12px] tracking-[0.1em] uppercase text-foreground/40">
+                          {lang === "en" ? item.subtitleEn : item.subtitleJa}
+                        </p>
+                      )}
+                      <p className="mt-4 text-sm text-foreground/50 max-w-lg leading-[1.8]">
+                        {lang === "en" ? item.descEn : item.descJa}
                       </p>
-                    )}
-                    <p className="mt-4 text-sm text-foreground/50 max-w-lg leading-[1.8]">
-                      {lang === "en" ? item.descEn : item.descJa}
-                    </p>
+                      {item.link && (
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 mt-4 text-[12px] tracking-[0.1em] text-foreground/40 underline underline-offset-4 decoration-foreground/15 hover:text-foreground/70 hover:decoration-foreground/30 transition-colors duration-500"
+                          data-testid={`link-work-${i}`}
+                        >
+                          <span>{item.link.replace(/^https?:\/\//, "")}</span>
+                          <ArrowUpRight className="w-3 h-3" />
+                        </a>
+                      )}
+                    </div>
+                    <span className="text-[10px] tracking-[0.2em] uppercase text-foreground/25 md:mt-2 shrink-0">
+                      {lang === "en" ? item.tagEn : item.tagJa}
+                    </span>
                   </div>
-                  <span className="text-[10px] tracking-[0.2em] uppercase text-foreground/25 md:mt-2 shrink-0">
-                    {lang === "en" ? item.tagEn : item.tagJa}
-                  </span>
                 </div>
               </div>
             </Reveal>
