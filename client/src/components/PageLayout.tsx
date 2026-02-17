@@ -4,9 +4,11 @@ import { FooterSection } from "@/components/FooterSection";
 export function PageLayout({
   children,
   showFooter = true,
+  compactFooter = false,
 }: {
   children: React.ReactNode;
   showFooter?: boolean;
+  compactFooter?: boolean;
 }) {
   return (
     <div className="min-h-screen bg-background relative">
@@ -15,7 +17,7 @@ export function PageLayout({
       <div className="relative z-[2]">
         <Navigation />
         {children}
-        {showFooter && <FooterSection />}
+        {showFooter && <FooterSection compact={compactFooter} />}
       </div>
     </div>
   );
