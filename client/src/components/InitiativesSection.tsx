@@ -95,35 +95,35 @@ export function InitiativesSection() {
             <Reveal key={i} delay={i * 100}>
               <div className="group py-8 md:py-10 border-t border-foreground/[0.06]">
                 <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
-                  <div className="flex-1 flex flex-col md:flex-row md:items-start md:justify-between gap-3">
-                    <div>
+                  <div className="flex-1">
+                    <div className="flex items-start justify-between gap-3">
                       <h3 className="font-serif text-3xl md:text-4xl font-light text-foreground/80 italic">
                         {lang === "en" ? item.titleEn : item.titleJa}
                       </h3>
-                      {item.subtitleEn && (
-                        <p className="mt-1 text-[12px] tracking-[0.1em] uppercase text-foreground/40">
-                          {lang === "en" ? item.subtitleEn : item.subtitleJa}
-                        </p>
-                      )}
-                      <p className="mt-4 text-sm text-foreground/50 max-w-lg leading-[1.8]">
-                        {lang === "en" ? item.descEn : item.descJa}
-                      </p>
-                      {item.link && (
-                        <a
-                          href={item.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 mt-4 text-[12px] tracking-[0.1em] text-foreground/40 underline underline-offset-4 decoration-foreground/15 hover:text-foreground/70 hover:decoration-foreground/30 transition-colors duration-500"
-                          data-testid={`link-work-${i}`}
-                        >
-                          <span>{item.link.replace(/^https?:\/\//, "")}</span>
-                          <ArrowUpRight className="w-3 h-3" />
-                        </a>
-                      )}
+                      <span className="text-[10px] tracking-[0.2em] uppercase text-foreground/25 mt-2 shrink-0 w-24 text-right">
+                        {lang === "en" ? item.tagEn : item.tagJa}
+                      </span>
                     </div>
-                    <span className="text-[10px] tracking-[0.2em] uppercase text-foreground/25 md:mt-2 shrink-0">
-                      {lang === "en" ? item.tagEn : item.tagJa}
-                    </span>
+                    {item.subtitleEn && (
+                      <p className="mt-1 text-[12px] tracking-[0.1em] uppercase text-foreground/40">
+                        {lang === "en" ? item.subtitleEn : item.subtitleJa}
+                      </p>
+                    )}
+                    <p className="mt-4 text-sm text-foreground/50 max-w-lg leading-[1.8]">
+                      {lang === "en" ? item.descEn : item.descJa}
+                    </p>
+                    {item.link && (
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 mt-4 text-[12px] tracking-[0.1em] text-foreground/40 underline underline-offset-4 decoration-foreground/15 hover:text-foreground/70 hover:decoration-foreground/30 transition-colors duration-500"
+                        data-testid={`link-work-${i}`}
+                      >
+                        <span>{item.link.replace(/^https?:\/\//, "")}</span>
+                        <ArrowUpRight className="w-3 h-3" />
+                      </a>
+                    )}
                   </div>
                   {item.image && (
                     <div className="w-full md:w-48 shrink-0 aspect-[16/10] overflow-hidden rounded-sm">
