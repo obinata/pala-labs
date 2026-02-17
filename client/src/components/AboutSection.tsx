@@ -54,7 +54,7 @@ export function AboutSection() {
             </Reveal>
 
             <Reveal delay={250}>
-              <p className="mt-8 md:mt-12 text-sm text-foreground/35 leading-[1.8] max-w-lg">
+              <p className="mt-8 md:mt-12 text-sm text-foreground/50 leading-[1.8] max-w-lg">
                 {t(
                   "In a time when technology has an unparalleled impact on society, it is crucial to prioritize a philosophy rooted in humanity and a long-term vision. We believe technology should be a tool that empowers individuals to shape their own paths to freedom; it should not be a tool to control personal agency.",
                   "テクノロジーが社会に比類なき影響を与える時代において、人間性に根ざした哲学と長期的なビジョンを優先することが不可欠です。テクノロジーは個人が自由への道を切り開くためのツールであるべきであり、個人の主体性を管理するためのツールであってはなりません。"
@@ -91,7 +91,7 @@ export function AboutSection() {
 
           <div className="md:col-span-7 md:col-start-6">
             <Reveal delay={200}>
-              <div className="text-sm text-foreground/35 leading-[1.8] max-w-lg space-y-6">
+              <div className="text-sm text-foreground/50 leading-[1.8] max-w-lg space-y-6">
                 <p>
                   {t(
                     'The name "Pala" draws inspiration from Aldous Huxley\'s final novel, Island (1962). In the novel, the fictional island of "Pala" is a harmonious world where Eastern philosophy and Western science coexist, a community that values human agency over technological advancement.',

@@ -29,38 +29,41 @@ const works = [
   {
     titleEn: "OpenShore",
     titleJa: "OpenShore",
-    descEn: "OS for Polkadot OpenGov.",
-    descJa: "Polkadot OpenGovのためのOS。",
-    tagEn: "Product",
-    tagJa: "プロダクト",
-    image: null as string | null,
+    subtitleEn: "The OS for Polkadot OpenGov",
+    subtitleJa: "Polkadot OpenGovのためのOS",
+    descEn: "Delivering radical transparency through curated data and expert analysis. We provide the essential context for navigating and understanding the evolution of Polkadot governance.",
+    descJa: "厳選されたデータと専門家の分析を通じて徹底的な透明性を実現。Polkadotガバナンスの進化を理解し、ナビゲートするための必要不可欠なコンテクストを提供します。",
+    tagEn: "Tool",
+    tagJa: "ツール",
   },
   {
     titleEn: "JAM Tour",
     titleJa: "JAMツアー",
-    descEn: "Global educational events featuring the JAM protocol by Dr. Gavin Wood.",
-    descJa: "Dr. Gavin WoodによるJAMプロトコルをフィーチャーしたグローバル教育イベント。",
+    subtitleEn: null,
+    subtitleJa: null,
+    descEn: "Global educational tour featuring the JAM protocol by Dr. Gavin Wood. Spanning 9 locations at world-renowned universities; including Cambridge, India, Taiwan, Hong Kong, and China. The series engaged 1,300+ in-person attendees and generated over 500,000 views to date.",
+    descJa: "Dr. Gavin WoodによるJAMプロトコルをフィーチャーしたグローバル教育ツアー。ケンブリッジ、インド、台湾、香港、中国を含む世界的に有名な大学9カ所で開催。1,300人以上の参加者を集め、これまでに50万回以上の視聴を記録しています。",
     tagEn: "Education",
     tagJa: "教育",
-    image: null as string | null,
   },
   {
     titleEn: "Gray Paper Lectures",
     titleJa: "グレイペーパー講義",
-    descEn: "Lecture series at Stanford, UTokyo, ETH Zurich, NUS, SNU, and UBA.",
-    descJa: "スタンフォード、東大、ETHチューリッヒ、NUS、SNU、UBAでの講義シリーズ。",
-    tagEn: "Research",
-    tagJa: "研究",
-    image: null as string | null,
+    subtitleEn: null,
+    subtitleJa: null,
+    descEn: "An academic lecture series delivered at prestigious institutions including Stanford, Singapore's NUS, UTokyo, ETH Zurich, and Seoul National University. This initiative successfully attracted 15+ independent implementer teams dedicated to bringing the JAM specifications to life.",
+    descJa: "スタンフォード、シンガポールNUS、東大、ETHチューリッヒ、ソウル大学を含む名門機関で行われた学術講義シリーズ。このイニシアチブは、JAM仕様の実現に取り組む15以上の独立した実装チームを惹きつけることに成功しました。",
+    tagEn: "Education",
+    tagJa: "教育",
   },
 ];
 
 const links = [
-  { titleEn: "Gray Paper Lectures", titleJa: "講義アーカイブ", url: "https://graypaper.com/lectures/?section=1.1-Nomenclature" },
-  { titleEn: "ETHPrague — JAM", titleJa: "ETHPrague — JAM", url: "https://live.ethprague.com/ethprague/watch?session=665833c8036a981493b0bf19" },
-  { titleEn: "The Universal Machine", titleJa: "ユニバーサルマシン", url: "https://www.youtube.com/watch?v=JGeKdpYEZs4" },
-  { titleEn: "Tour Dates", titleJa: "ツアー日程", url: "https://palalabs.org/events" },
-  { titleEn: "Event Calendar", titleJa: "イベントカレンダー", url: "https://lu.ma/pala_labs" },
+  { titleEn: "Safeguard Against Post-Truth Age", titleJa: "ポスト真実時代への防衛", descEn: "Short documentary", descJa: "ショートドキュメンタリー", url: "https://youtube.com/watch?si=s7TyA-dDdvasehmO&v=-GdWXtwvWtQ&feature=youtu.be" },
+  { titleEn: "JAM Tour Recap", titleJa: "JAMツアー総集編", descEn: "Video recap", descJa: "動画まとめ", url: "https://www.youtube.com/watch?si=BYCWE_I5ENItRaZn&v=FgxNRMtcpCM&feature=youtu.be" },
+  { titleEn: "Gray Paper Lectures", titleJa: "講義アーカイブ", descEn: "Lecture archive", descJa: "講義アーカイブ", url: "https://graypaper.com/lectures/?section=1.1-Nomenclature" },
+  { titleEn: "ETHPrague — JAM", titleJa: "ETHPrague — JAM", descEn: "Conference talk", descJa: "カンファレンストーク", url: "https://live.ethprague.com/ethprague/watch?session=665833c8036a981493b0bf19" },
+  { titleEn: "Event Calendar", titleJa: "イベントカレンダー", descEn: "Upcoming events", descJa: "今後のイベント", url: "https://lu.ma/pala_labs" },
 ];
 
 export function InitiativesSection() {
@@ -83,29 +86,23 @@ export function InitiativesSection() {
           {works.map((item, i) => (
             <Reveal key={i} delay={i * 100}>
               <div className="group py-8 md:py-10 border-t border-foreground/[0.06]">
-                <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
-                  {item.image && (
-                    <div className="w-full md:w-40 shrink-0 aspect-[16/10] overflow-hidden rounded-sm">
-                      <img
-                        src={item.image}
-                        alt=""
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  )}
-                  <div className="flex-1 flex flex-col md:flex-row md:items-start md:justify-between gap-3">
-                    <div>
-                      <h3 className="font-serif text-3xl md:text-4xl font-light text-foreground/80 italic">
-                        {lang === "en" ? item.titleEn : item.titleJa}
-                      </h3>
-                      <p className="mt-3 text-sm text-foreground/35 max-w-md leading-relaxed">
-                        {lang === "en" ? item.descEn : item.descJa}
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
+                  <div className="flex-1">
+                    <h3 className="font-serif text-3xl md:text-4xl font-light text-foreground/80 italic">
+                      {lang === "en" ? item.titleEn : item.titleJa}
+                    </h3>
+                    {item.subtitleEn && (
+                      <p className="mt-1 text-[12px] tracking-[0.1em] uppercase text-foreground/40">
+                        {lang === "en" ? item.subtitleEn : item.subtitleJa}
                       </p>
-                    </div>
-                    <span className="text-[10px] tracking-[0.2em] uppercase text-foreground/25 md:mt-2 shrink-0">
-                      {lang === "en" ? item.tagEn : item.tagJa}
-                    </span>
+                    )}
+                    <p className="mt-4 text-sm text-foreground/50 max-w-lg leading-[1.8]">
+                      {lang === "en" ? item.descEn : item.descJa}
+                    </p>
                   </div>
+                  <span className="text-[10px] tracking-[0.2em] uppercase text-foreground/25 md:mt-2 shrink-0">
+                    {lang === "en" ? item.tagEn : item.tagJa}
+                  </span>
                 </div>
               </div>
             </Reveal>
@@ -114,23 +111,31 @@ export function InitiativesSection() {
         </div>
 
         <Reveal delay={200} className="mt-12 md:mt-20">
-          <p className="text-[11px] tracking-[0.3em] uppercase text-foreground/30 mb-6 md:mb-8">
-            {t("Archive", "アーカイブ")}
+          <p className="text-[11px] tracking-[0.3em] uppercase text-foreground/30 mb-8 md:mb-10">
+            {t("Content Archive", "コンテンツアーカイブ")}
           </p>
-          <div className="flex flex-wrap gap-x-6 gap-y-3">
+          <div className="space-y-0">
             {links.map((link, i) => (
               <a
                 key={i}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-1.5 text-[12px] text-foreground/40 underline underline-offset-4 decoration-foreground/10 hover:text-foreground/70 hover:decoration-foreground/30 transition-colors duration-500"
+                className="group flex items-center justify-between py-4 border-t border-foreground/[0.06] transition-colors duration-500 hover:bg-foreground/[0.02]"
                 data-testid={`link-archive-${i}`}
               >
-                <span>{lang === "en" ? link.titleEn : link.titleJa}</span>
-                <ArrowUpRight className="w-3 h-3" />
+                <div>
+                  <p className="text-sm text-foreground/60 group-hover:text-foreground/80 transition-colors duration-500">
+                    {lang === "en" ? link.titleEn : link.titleJa}
+                  </p>
+                  <p className="mt-0.5 text-[11px] text-foreground/25">
+                    {lang === "en" ? link.descEn : link.descJa}
+                  </p>
+                </div>
+                <ArrowUpRight className="w-3.5 h-3.5 text-foreground/20 group-hover:text-foreground/50 transition-colors duration-500 shrink-0 ml-4" />
               </a>
             ))}
+            <div className="border-t border-foreground/[0.06]" />
           </div>
         </Reveal>
       </div>
