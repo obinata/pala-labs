@@ -14,7 +14,7 @@ export function HeroSection() {
   return (
     <section
       data-testid="section-hero"
-      className="relative h-screen flex items-end pb-24 md:pb-32 overflow-hidden"
+      className="relative min-h-[70vh] md:min-h-[80vh] flex items-end pb-16 md:pb-24 overflow-hidden"
     >
       <div
         className={`absolute right-0 top-[15%] md:top-1/2 md:-translate-y-1/2 w-[60%] md:w-[40%] h-[45%] md:h-[70%] pointer-events-none transition-opacity duration-[18s] delay-200 ease-out ${
