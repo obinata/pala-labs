@@ -94,16 +94,11 @@ export function InitiativesSection() {
           {works.map((item, i) => (
             <Reveal key={i} delay={i * 100}>
               <div className="group py-8 md:py-10 border-t border-foreground/[0.06]">
-                <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
-                  <div className="flex-1">
-                    <div className="flex items-start justify-between gap-3">
-                      <h3 className="font-serif text-3xl md:text-4xl font-light text-foreground/80 italic">
-                        {lang === "en" ? item.titleEn : item.titleJa}
-                      </h3>
-                      <span className="text-[10px] tracking-[0.2em] uppercase text-foreground/25 mt-2 shrink-0 w-24 text-right">
-                        {lang === "en" ? item.tagEn : item.tagJa}
-                      </span>
-                    </div>
+                <div className="flex items-start gap-6 md:gap-10">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-serif text-3xl md:text-4xl font-light text-foreground/80 italic">
+                      {lang === "en" ? item.titleEn : item.titleJa}
+                    </h3>
                     {item.subtitleEn && (
                       <p className="mt-1 text-[12px] tracking-[0.1em] uppercase text-foreground/40">
                         {lang === "en" ? item.subtitleEn : item.subtitleJa}
@@ -125,8 +120,22 @@ export function InitiativesSection() {
                       </a>
                     )}
                   </div>
+                  <div className="hidden md:flex flex-col items-end gap-4 shrink-0">
+                    <span className="text-[10px] tracking-[0.2em] uppercase text-foreground/25 mt-2 w-24 text-right">
+                      {lang === "en" ? item.tagEn : item.tagJa}
+                    </span>
+                    {item.image && (
+                      <div className="w-48 aspect-[16/10] overflow-hidden rounded-sm">
+                        <img
+                          src={item.image}
+                          alt=""
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
+                  </div>
                   {item.image && (
-                    <div className="w-full md:w-48 shrink-0 aspect-[16/10] overflow-hidden rounded-sm">
+                    <div className="md:hidden w-full aspect-[16/10] overflow-hidden rounded-sm">
                       <img
                         src={item.image}
                         alt=""
