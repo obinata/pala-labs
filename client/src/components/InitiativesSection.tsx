@@ -95,15 +95,6 @@ export function InitiativesSection() {
             <Reveal key={i} delay={i * 100}>
               <div className="group py-8 md:py-10 border-t border-foreground/[0.06]">
                 <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
-                  {item.image && (
-                    <div className="w-full md:w-48 shrink-0 aspect-[16/10] overflow-hidden rounded-sm">
-                      <img
-                        src={item.image}
-                        alt=""
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  )}
                   <div className="flex-1 flex flex-col md:flex-row md:items-start md:justify-between gap-3">
                     <div>
                       <h3 className="font-serif text-3xl md:text-4xl font-light text-foreground/80 italic">
@@ -134,6 +125,15 @@ export function InitiativesSection() {
                       {lang === "en" ? item.tagEn : item.tagJa}
                     </span>
                   </div>
+                  {item.image && (
+                    <div className="w-full md:w-48 shrink-0 aspect-[16/10] overflow-hidden rounded-sm">
+                      <img
+                        src={item.image}
+                        alt=""
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             </Reveal>
