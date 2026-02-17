@@ -1,5 +1,6 @@
 import { useLang } from "@/lib/i18n";
 import { useScrollReveal } from "@/lib/useScrollReveal";
+import philosophyImg from "@assets/screenshot-2024-12-18-at-22.00.17-AzG3vK3QEKt3EXJE_1771175866815.avif";
 import bookImg from "@assets/DSCF6697_1771353747727.jpg";
 
 function Reveal({
@@ -41,24 +42,38 @@ export function AboutSection() {
           </p>
         </Reveal>
 
-        <div className="mb-20 md:mb-32">
-          <Reveal delay={100}>
-            <p className="font-serif text-2xl md:text-3xl font-light leading-[1.4] text-foreground/80 italic max-w-3xl">
-              {t(
-                "Pala Labs is dedicated to empowering human agency through contributing to sovereign technology for sovereign individuals.",
-                "Pala Labsは、自律的な個人のためのソブリン・テクノロジーへの貢献を通じて、人間の主体性を高めることに専念しています。"
-              )}
-            </p>
-          </Reveal>
+        <div className="grid md:grid-cols-12 gap-10 md:gap-12 mb-20 md:mb-32">
+          <div className="md:col-span-7">
+            <Reveal delay={100}>
+              <p className="font-serif text-2xl md:text-3xl font-light leading-[1.4] text-foreground/80 italic max-w-xl">
+                {t(
+                  "Pala Labs is dedicated to empowering human agency through contributing to sovereign technology for sovereign individuals.",
+                  "Pala Labsは、自律的な個人のためのソブリン・テクノロジーへの貢献を通じて、人間の主体性を高めることに専念しています。"
+                )}
+              </p>
+            </Reveal>
 
-          <Reveal delay={250}>
-            <p className="mt-8 md:mt-12 text-sm text-foreground/35 leading-[1.8] max-w-xl">
-              {t(
-                "In a time when technology has an unparalleled impact on society, it is crucial to prioritize a philosophy rooted in humanity and a long-term vision. We believe technology should be a tool that empowers individuals to shape their own paths to freedom; it should not be a tool to control personal agency.",
-                "テクノロジーが社会に比類なき影響を与える時代において、人間性に根ざした哲学と長期的なビジョンを優先することが不可欠です。テクノロジーは個人が自由への道を切り開くためのツールであるべきであり、個人の主体性を管理するためのツールであってはなりません。"
-              )}
-            </p>
-          </Reveal>
+            <Reveal delay={250}>
+              <p className="mt-8 md:mt-12 text-sm text-foreground/35 leading-[1.8] max-w-lg">
+                {t(
+                  "In a time when technology has an unparalleled impact on society, it is crucial to prioritize a philosophy rooted in humanity and a long-term vision. We believe technology should be a tool that empowers individuals to shape their own paths to freedom; it should not be a tool to control personal agency.",
+                  "テクノロジーが社会に比類なき影響を与える時代において、人間性に根ざした哲学と長期的なビジョンを優先することが不可欠です。テクノロジーは個人が自由への道を切り開くためのツールであるべきであり、個人の主体性を管理するためのツールであってはなりません。"
+                )}
+              </p>
+            </Reveal>
+          </div>
+
+          <div className="md:col-span-5 md:col-start-8">
+            <Reveal delay={300}>
+              <div className="relative aspect-[3/4] overflow-hidden rounded-sm">
+                <img
+                  src={philosophyImg}
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </Reveal>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-12 gap-10 md:gap-12">
