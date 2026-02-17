@@ -44,6 +44,15 @@ const works = [
     tagJa: "研究",
     image: null as string | null,
   },
+  {
+    titleEn: "OpenShore",
+    titleJa: "OpenShore",
+    descEn: "OS for Polkadot OpenGov.",
+    descJa: "Polkadot OpenGovのためのOS。",
+    tagEn: "Product",
+    tagJa: "プロダクト",
+    image: null as string | null,
+  },
 ];
 
 const links = [
