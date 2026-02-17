@@ -63,9 +63,9 @@ export function AboutSection() {
             </Reveal>
           </div>
 
-          <div className="md:col-span-4 md:col-start-9">
+          <div className="md:col-span-5 md:col-start-8">
             <Reveal delay={300}>
-              <div className="relative aspect-[3/4] overflow-hidden rounded-sm max-w-[280px] ml-auto">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-sm max-w-[360px] ml-auto">
                 <img
                   src={philosophyImg}
                   alt=""
@@ -77,9 +77,9 @@ export function AboutSection() {
         </div>
 
         <div className="grid md:grid-cols-12 gap-10 md:gap-12">
-          <div className="md:col-span-4">
+          <div className="md:col-span-5">
             <Reveal delay={100}>
-              <div className="relative aspect-[3/4] overflow-hidden rounded-sm max-w-[280px]">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-sm max-w-[360px]">
                 <img
                   src={bookImg}
                   alt="Island and Brave New World by Aldous Huxley"
