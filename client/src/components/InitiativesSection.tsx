@@ -27,6 +27,15 @@ function Reveal({
 
 const works = [
   {
+    titleEn: "OpenShore",
+    titleJa: "OpenShore",
+    descEn: "OS for Polkadot OpenGov.",
+    descJa: "Polkadot OpenGovのためのOS。",
+    tagEn: "Product",
+    tagJa: "プロダクト",
+    image: null as string | null,
+  },
+  {
     titleEn: "JAM Tour",
     titleJa: "JAMツアー",
     descEn: "Global educational events featuring the JAM protocol by Dr. Gavin Wood.",
@@ -42,15 +51,6 @@ const works = [
     descJa: "スタンフォード、東大、ETHチューリッヒ、NUS、SNU、UBAでの講義シリーズ。",
     tagEn: "Research",
     tagJa: "研究",
-    image: null as string | null,
-  },
-  {
-    titleEn: "OpenShore",
-    titleJa: "OpenShore",
-    descEn: "OS for Polkadot OpenGov.",
-    descJa: "Polkadot OpenGovのためのOS。",
-    tagEn: "Product",
-    tagJa: "プロダクト",
     image: null as string | null,
   },
 ];
