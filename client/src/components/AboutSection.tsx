@@ -67,7 +67,7 @@ export function AboutSection() {
             <Reveal delay={300}>
               <div
                 className="relative aspect-[3/4] overflow-hidden max-w-[220px] md:max-w-[360px] ml-auto"
-                style={{ borderRadius: "35% 40% 38% 32% / 8% 12% 10% 6%" }}
+                style={{ borderRadius: "35% 40% 38% 32% / 15% 18% 16% 13%" }}
               >
                 <img
                   src={philosophyImg}
@@ -109,7 +109,7 @@ export function AboutSection() {
             <Reveal delay={100}>
               <div
                 className="relative aspect-[3/4] overflow-hidden max-w-[220px] md:max-w-[360px]"
-                style={{ borderRadius: "38% 32% 35% 40% / 10% 6% 8% 12%" }}
+                style={{ borderRadius: "38% 32% 35% 40% / 16% 13% 15% 18%" }}
               >
                 <img
                   src={bookImg}
