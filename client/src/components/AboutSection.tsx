@@ -65,7 +65,10 @@ export function AboutSection() {
 
           <div className="md:col-span-5 md:col-start-8">
             <Reveal delay={300}>
-              <div className="relative aspect-[3/4] overflow-hidden rounded-sm max-w-[220px] md:max-w-[360px] ml-auto">
+              <div
+                className="relative aspect-[3/4] overflow-hidden max-w-[220px] md:max-w-[360px] ml-auto"
+                style={{ borderRadius: "60% 40% 55% 45% / 45% 55% 40% 60%" }}
+              >
                 <img
                   src={philosophyImg}
                   alt=""
@@ -104,7 +107,10 @@ export function AboutSection() {
 
           <div className="md:col-span-5 order-2 md:order-1">
             <Reveal delay={100}>
-              <div className="relative aspect-[3/4] overflow-hidden rounded-sm max-w-[220px] md:max-w-[360px]">
+              <div
+                className="relative aspect-[3/4] overflow-hidden max-w-[220px] md:max-w-[360px]"
+                style={{ borderRadius: "45% 55% 40% 60% / 55% 45% 60% 40%" }}
+              >
                 <img
                   src={bookImg}
                   alt="Island and Brave New World by Aldous Huxley"
