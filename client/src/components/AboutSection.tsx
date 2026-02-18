@@ -77,9 +77,9 @@ export function AboutSection() {
         </div>
 
         <div className="grid md:grid-cols-12 gap-10 md:gap-12">
-          <div className="md:col-span-7 md:col-start-1 order-1 md:order-2">
+          <div className="md:col-span-7 md:col-start-6 order-1 md:order-2">
             <Reveal delay={200}>
-              <div className="text-sm text-foreground/50 leading-[1.8] max-w-lg space-y-6">
+              <div className="text-sm text-foreground/50 leading-[1.8] max-w-lg ml-auto space-y-6">
                 <p>
                   {t(
                     'The name "Pala" draws inspiration from Aldous Huxley\'s final novel, Island (1962). In the novel, the fictional island of "Pala" is a harmonious world where Eastern philosophy and Western science coexist, a community that values human agency over technological advancement.',
