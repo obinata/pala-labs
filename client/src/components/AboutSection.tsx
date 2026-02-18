@@ -1,7 +1,7 @@
 import { useLang } from "@/lib/i18n";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 import philosophyImg from "@assets/screenshot-2024-12-18-at-22.00.17-AzG3vK3QEKt3EXJE_1771175866815.avif";
-import bookImg from "@assets/DSCF6697_1771353747727.jpg";
+import bookImg from "@assets/IMG_1128_1771395263441.JPG";
 
 function Reveal({
   children,
