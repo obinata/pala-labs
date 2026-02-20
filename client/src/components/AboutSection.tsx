@@ -45,7 +45,7 @@ export function AboutSection() {
         <div className="grid md:grid-cols-12 gap-10 md:gap-12 mb-20 md:mb-32">
           <div className="md:col-span-7">
             <Reveal delay={100}>
-              <p className="text-2xl md:text-3xl font-normal leading-[1.4] text-foreground/80 max-w-xl" style={{ fontFamily: "'Radley', serif" }}>
+              <p className="text-2xl md:text-3xl font-normal leading-[1.4] text-foreground/80 max-w-xl" style={{ fontFamily: "'Radley', serif", color: "#494949" }}>
                 {t(
                   "Pala Labs is dedicated to empowering human agency through contributing to sovereign technology for sovereign individuals.",
                   "Pala Labsは、自律的な個人のためのソブリン・テクノロジーへの貢献を通じて、人間の主体性を高めることに専念しています。"

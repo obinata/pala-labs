@@ -96,7 +96,7 @@ export function InitiativesSection() {
               <div className="group py-8 md:py-10 border-t border-foreground/[0.06]">
                 <div className="flex items-start gap-6 md:gap-10">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-3xl md:text-4xl font-normal text-foreground/80" style={{ fontFamily: "'Radley', serif" }}>
+                    <h3 className="text-3xl md:text-4xl font-normal text-foreground/80" style={{ fontFamily: "'Radley', serif", color: "#494949" }}>
                       {lang === "en" ? item.titleEn : item.titleJa}
                     </h3>
                     {item.subtitleEn && (
