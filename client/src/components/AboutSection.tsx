@@ -81,6 +81,14 @@ export function AboutSection() {
 
         <div className="grid md:grid-cols-12 gap-10 md:gap-12">
           <div className="md:col-span-7 md:col-start-6 order-1 md:order-2">
+            <Reveal delay={100}>
+              <p className="text-2xl md:text-3xl font-normal leading-[1.4] max-w-lg ml-auto mb-8" style={{ fontFamily: "'Radley', 'Sawarabi Mincho', serif", color: "#494949" }}>
+                {t(
+                  "Choose technology to build freedom.",
+                  "自由を築くために、テクノロジーを選び取る"
+                )}
+              </p>
+            </Reveal>
             <Reveal delay={200}>
               <div className="text-sm leading-[1.8] max-w-lg ml-auto" style={{ color: "#666666" }}>
                 <p>
