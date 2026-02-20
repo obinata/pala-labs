@@ -39,8 +39,8 @@ export function HeroSection() {
         >
           <h1 className="text-[clamp(1.8rem,4.5vw,4rem)] font-normal leading-[1.1] tracking-[-0.01em] text-foreground max-w-2xl" style={{ fontFamily: "'Radley', serif", color: "#494949" }}>
             {t(
-              "From counterculture to decentralized technologies — sovereignty is not given. It's built.",
-              "カウンターカルチャーから分散型テクノロジーへ — 主権は与えられるものではない。築くものだ。"
+              "The lab for sovereign technology and sovereign individuals.",
+              "ソブリン・テクノロジーとソブリン・インディビジュアルのためのラボ。"
             )}
           </h1>
         </div>

@@ -47,8 +47,8 @@ export function AboutSection() {
             <Reveal delay={100}>
               <p className="text-2xl md:text-3xl font-normal leading-[1.4] text-foreground/80 max-w-xl" style={{ fontFamily: "'Radley', serif", color: "#494949" }}>
                 {t(
-                  "Pala Labs is a research and advocacy lab advancing sovereign technology — because who controls your tools controls your life.",
-                  "Pala Labsは、ソブリン・テクノロジーを推進するリサーチ＆アドボカシー・ラボです — ツールを支配する者が、あなたの人生を支配するからです。"
+                  "From counterculture to decentralized technologies — sovereignty is not given. It's built.",
+                  "カウンターカルチャーから分散型テクノロジーへ — 主権は与えられるものではない。築くものだ。"
                 )}
               </p>
             </Reveal>
