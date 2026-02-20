@@ -47,8 +47,8 @@ export function AboutSection() {
             <Reveal delay={100}>
               <p className="text-2xl md:text-3xl font-normal leading-[1.4] text-foreground/80 max-w-xl" style={{ fontFamily: "'Radley', serif", color: "#494949" }}>
                 {t(
-                  "Pala Labs is dedicated to empowering human agency through contributing to sovereign technology for sovereign individuals.",
-                  "Pala Labsは、自律的な個人のためのソブリン・テクノロジーへの貢献を通じて、人間の主体性を高めることに専念しています。"
+                  "Pala Labs is a research and advocacy lab advancing sovereign technology — because who controls your tools controls your life.",
+                  "Pala Labsは、ソブリン・テクノロジーを推進するリサーチ＆アドボカシー・ラボです — ツールを支配する者が、あなたの人生を支配するからです。"
                 )}
               </p>
             </Reveal>
@@ -56,8 +56,8 @@ export function AboutSection() {
             <Reveal delay={250}>
               <p className="mt-8 md:mt-12 text-sm leading-[1.8] max-w-lg" style={{ color: "#666666" }}>
                 {t(
-                  "In a time when technology has an unparalleled impact on society, it is crucial to prioritize a philosophy rooted in humanity and a long-term vision. We believe technology should be a tool that empowers individuals to shape their own paths to freedom; it should not be a tool to control personal agency.",
-                  "テクノロジーが社会に比類なき影響を与える時代において、人間性に根ざした哲学と長期的なビジョンを優先することが不可欠です。テクノロジーは個人が自由への道を切り開くためのツールであるべきであり、個人の主体性を管理するためのツールであってはなりません。"
+                  "Technology has never been neutral. It either serves those who build it or those who use it. We believe technology should be a tool that serves individuals. That vision carries a long lineage; from the hippies, the hackers, and the cypherpunks, to technologies like Bitcoin and the original promise of Web3. Pala Labs sees itself as part of that lineage.",
+                  "テクノロジーは中立であったことはありません。それを作る者か、使う者のどちらかに奉仕します。私たちはテクノロジーが個人に奉仕するツールであるべきだと信じています。そのビジョンには長い系譜があります — ヒッピー、ハッカー、サイファーパンクから、ビットコインやWeb3の原初の約束まで。Pala Labsはその系譜の一部であると考えています。"
                 )}
               </p>
             </Reveal>
@@ -82,23 +82,11 @@ export function AboutSection() {
         <div className="grid md:grid-cols-12 gap-10 md:gap-12">
           <div className="md:col-span-7 md:col-start-6 order-1 md:order-2">
             <Reveal delay={200}>
-              <div className="text-sm text-foreground/50 leading-[1.8] max-w-lg ml-auto space-y-6">
+              <div className="text-sm leading-[1.8] max-w-lg ml-auto" style={{ color: "#666666" }}>
                 <p>
                   {t(
-                    'The name "Pala" draws inspiration from Aldous Huxley\'s final novel, Island (1962). In the novel, the fictional island of "Pala" is a harmonious world where Eastern philosophy and Western science coexist, a community that values human agency over technological advancement.',
-                    '「Pala」という名前は、オルダス・ハクスリーの最後の小説『島』（1962年）に着想を得ています。小説の中で、架空の島「パラ」は東洋哲学と西洋科学が共存する調和的な世界であり、技術的進歩よりも人間の主体性を重んじるコミュニティです。'
-                  )}
-                </p>
-                <p>
-                  {t(
-                    "In contrast to the dystopia illustrated in his renowned work, Brave New World (1932), Island represents an alternative vision — a perspective that resonates with the philosophy of Pala Labs.",
-                    "代表作『すばらしい新世界』（1932年）で描かれたディストピアとは対照的に、『島』はオルタナティブなビジョンを表しています — Pala Labsの哲学と共鳴する視点です。"
-                  )}
-                </p>
-                <p>
-                  {t(
-                    "Many of the lessons we found in Huxley are consistent with the philosophies of the hippies, hackers and cypherpunks who came after his time. We see technologies like Bitcoin and Web3 in its original vision as extensions of those principles.",
-                    "ハクスリーから得た教訓の多くは、彼の時代以降に現れたヒッピー、ハッカー、サイファーパンクの哲学と一致しています。ビットコインやWeb3のオリジナルビジョンは、それらの原則の延長線上にあると考えています。"
+                    "Pala takes its name from the fictional island in Aldous Huxley's final novel, Island (1962) — a world where human agency comes before technological progress. Not the dystopia of Brave New World, but its alternative: a community that chooses how it lives. That's the vision we're working towards.",
+                    "Palaという名前は、オルダス・ハクスリーの最後の小説『島』（1962年）に登場する架空の島に由来します — テクノロジーの進歩よりも人間の主体性が優先される世界。『すばらしい新世界』のディストピアではなく、そのオルタナティブ：自らの生き方を選ぶコミュニティ。それが私たちが目指すビジョンです。"
                   )}
                 </p>
               </div>
