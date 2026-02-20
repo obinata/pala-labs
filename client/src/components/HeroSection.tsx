@@ -52,8 +52,8 @@ export function HeroSection() {
         >
           <p className="text-sm max-w-md leading-relaxed" style={{ color: "#666666" }}>
             {t(
-              "A sovereign technology lab dedicated to empowering human agency through people's technology.",
-              "人々のテクノロジーを通じて人間の主体性を高めることに専念するソブリン・テクノロジー・ラボ。"
+              "Research, advocacy, and community for a self-sovereign future.",
+              "自己主権的な未来のためのリサーチ、アドボカシー、コミュニティ。"
             )}
           </p>
         </div>
