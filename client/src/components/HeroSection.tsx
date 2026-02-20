@@ -50,7 +50,7 @@ export function HeroSection() {
             mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="text-sm text-foreground/40 max-w-md leading-relaxed">
+          <p className="text-sm max-w-md leading-relaxed" style={{ color: "#666666" }}>
             {t(
               "A sovereign technology lab dedicated to empowering human agency through people's technology.",
               "人々のテクノロジーを通じて人間の主体性を高めることに専念するソブリン・テクノロジー・ラボ。"

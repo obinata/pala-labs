@@ -104,7 +104,7 @@ export function InitiativesSection() {
                         {lang === "en" ? item.subtitleEn : item.subtitleJa}
                       </p>
                     )}
-                    <p className="mt-4 text-sm text-foreground/50 max-w-lg leading-[1.8]">
+                    <p className="mt-4 text-sm max-w-lg leading-[1.8]" style={{ color: "#666666" }}>
                       {lang === "en" ? item.descEn : item.descJa}
                     </p>
                     {item.link && (

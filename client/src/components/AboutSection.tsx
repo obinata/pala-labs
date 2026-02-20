@@ -54,7 +54,7 @@ export function AboutSection() {
             </Reveal>
 
             <Reveal delay={250}>
-              <p className="mt-8 md:mt-12 text-sm text-foreground/50 leading-[1.8] max-w-lg">
+              <p className="mt-8 md:mt-12 text-sm leading-[1.8] max-w-lg" style={{ color: "#666666" }}>
                 {t(
                   "In a time when technology has an unparalleled impact on society, it is crucial to prioritize a philosophy rooted in humanity and a long-term vision. We believe technology should be a tool that empowers individuals to shape their own paths to freedom; it should not be a tool to control personal agency.",
                   "テクノロジーが社会に比類なき影響を与える時代において、人間性に根ざした哲学と長期的なビジョンを優先することが不可欠です。テクノロジーは個人が自由への道を切り開くためのツールであるべきであり、個人の主体性を管理するためのツールであってはなりません。"
