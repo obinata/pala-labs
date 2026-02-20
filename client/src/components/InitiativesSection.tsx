@@ -85,7 +85,7 @@ export function InitiativesSection() {
     >
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         <Reveal>
-          <p className="text-[11px] tracking-[0.3em] uppercase text-foreground/30 mb-10 md:mb-16">
+          <p className="text-[11px] tracking-[0.3em] uppercase mb-10 md:mb-16" style={{ color: "#666666" }}>
             {t("Work", "活動")}
           </p>
         </Reveal>
@@ -100,7 +100,7 @@ export function InitiativesSection() {
                       {lang === "en" ? item.titleEn : item.titleJa}
                     </h3>
                     {item.subtitleEn && (
-                      <p className="mt-1 text-[12px] tracking-[0.1em] uppercase text-foreground/40">
+                      <p className="mt-1 text-[12px] tracking-[0.1em] uppercase" style={{ color: "#666666" }}>
                         {lang === "en" ? item.subtitleEn : item.subtitleJa}
                       </p>
                     )}
@@ -121,7 +121,7 @@ export function InitiativesSection() {
                     )}
                   </div>
                   <div className="hidden md:flex flex-col items-end gap-4 shrink-0">
-                    <span className="text-[10px] tracking-[0.2em] uppercase text-foreground/25 mt-2 w-24 text-right">
+                    <span className="text-[10px] tracking-[0.2em] uppercase mt-2 w-24 text-right" style={{ color: "#666666" }}>
                       {lang === "en" ? item.tagEn : item.tagJa}
                     </span>
                     {item.image && (
@@ -151,7 +151,7 @@ export function InitiativesSection() {
         </div>
 
         <Reveal delay={200} className="mt-12 md:mt-20">
-          <p className="text-[11px] tracking-[0.3em] uppercase text-foreground/30 mb-8 md:mb-10">
+          <p className="text-[11px] tracking-[0.3em] uppercase mb-8 md:mb-10" style={{ color: "#666666" }}>
             {t("Content Archive", "コンテンツアーカイブ")}
           </p>
           <div className="space-y-0">
