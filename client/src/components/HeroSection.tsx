@@ -37,7 +37,7 @@ export function HeroSection() {
             mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          <h1 className="text-[clamp(1.5rem,3.5vw,3rem)] font-normal leading-[1.1] tracking-[-0.01em] text-foreground max-w-2xl" style={{ fontFamily: "'Radley', serif", color: "#494949", whiteSpace: "pre-line" }}>
+          <h1 className="text-[clamp(1.5rem,3.5vw,3rem)] font-normal leading-[1.1] tracking-[-0.01em] text-foreground max-w-2xl" style={{ fontFamily: "'Radley', 'AR Mincho', serif", color: "#494949", whiteSpace: "pre-line" }}>
             {t(
               "The lab for sovereign technology and sovereign individuals.",
               "人間のためのテクノロジー\n自由な個人の手に"
