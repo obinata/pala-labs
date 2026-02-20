@@ -46,7 +46,7 @@ function PostRow({ post, index }: { post: BlogPost; index: number }) {
             <h3 className="text-xl md:text-2xl font-normal text-foreground/70 group-hover:text-foreground/90 transition-colors duration-500" style={{ fontFamily: "'Radley', serif", color: "#494949" }}>
               {title}
             </h3>
-            <p className="mt-2 text-[13px] text-foreground/30 leading-relaxed max-w-lg line-clamp-2">
+            <p className="mt-2 text-[13px] leading-relaxed max-w-lg line-clamp-2" style={{ color: "#666666" }}>
               {excerpt}
             </p>
           </div>
