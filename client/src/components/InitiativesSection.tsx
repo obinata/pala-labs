@@ -103,7 +103,7 @@ export function InitiativesSection() {
               >
                 <div>
                   <p className="text-sm text-foreground/60 group-hover:text-foreground/80 transition-colors duration-500">
-                    {lang === "en" ? link.titleEn : link.titleJa}
+                    {link.titleEn}
                   </p>
                   <p className="mt-0.5 text-[11px] text-foreground/25">
                     {lang === "en" ? link.descEn : link.descJa}
