@@ -43,7 +43,7 @@ function PostRow({ post, index }: { post: BlogPost; index: number }) {
       >
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
           <div className="flex-1 min-w-0">
-            <h3 className="text-xl md:text-2xl font-normal text-foreground/70 group-hover:text-foreground/90 transition-colors duration-500" style={{ fontFamily: "'Radley', 'Hannari', serif", color: "#494949" }}>
+            <h3 className="text-xl md:text-2xl font-normal text-foreground/70 group-hover:text-foreground/90 transition-colors duration-500" style={{ fontFamily: "'Radley', 'Sawarabi Mincho', serif", color: "#494949" }}>
               {title}
             </h3>
             <p className="mt-2 text-[13px] leading-relaxed max-w-lg line-clamp-2" style={{ color: "#666666" }}>
