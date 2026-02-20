@@ -40,7 +40,7 @@ export function HeroSection() {
           <h1 className="text-[clamp(1.5rem,3.5vw,3rem)] font-normal leading-[1.1] tracking-[-0.01em] text-foreground max-w-2xl" style={{ fontFamily: "'Radley', serif", color: "#494949", whiteSpace: "pre-line" }}>
             {t(
               "The lab for sovereign technology and sovereign individuals.",
-              "誰にも支配されないテクノロジーを\n自由な個人の手に"
+              "人間のためのテクノロジー\n自由な個人の手に"
             )}
           </h1>
         </div>
