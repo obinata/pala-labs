@@ -25,12 +25,12 @@ export function PageLayout({
     const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
     const animate = () => {
-      current.current.x = lerp(current.current.x, mouse.current.x, 0.02);
-      current.current.y = lerp(current.current.y, mouse.current.y, 0.02);
+      current.current.x = lerp(current.current.x, mouse.current.x, 0.06);
+      current.current.y = lerp(current.current.y, mouse.current.y, 0.06);
 
       if (glowRef.current) {
-        const offsetX = (current.current.x - 0.5) * 30;
-        const offsetY = (current.current.y - 0.5) * 30;
+        const offsetX = (current.current.x - 0.5) * 120;
+        const offsetY = (current.current.y - 0.5) * 120;
         glowRef.current.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
       }
 
