@@ -85,6 +85,38 @@ export function InitiativesSection() {
     >
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         <Reveal>
+          <p className="text-[11px] tracking-[0.3em] uppercase mb-8 md:mb-10" style={{ color: "#666666" }}>
+            {t("Library", "ライブラリ")}
+          </p>
+        </Reveal>
+
+        <Reveal delay={100}>
+          <div className="space-y-0">
+            {links.map((link, i) => (
+              <a
+                key={i}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between py-4 border-t border-foreground/[0.06] transition-colors duration-500 hover:bg-foreground/[0.02]"
+                data-testid={`link-archive-${i}`}
+              >
+                <div>
+                  <p className="text-sm text-foreground/60 group-hover:text-foreground/80 transition-colors duration-500">
+                    {lang === "en" ? link.titleEn : link.titleJa}
+                  </p>
+                  <p className="mt-0.5 text-[11px] text-foreground/25">
+                    {lang === "en" ? link.descEn : link.descJa}
+                  </p>
+                </div>
+                <ArrowUpRight className="w-3.5 h-3.5 text-foreground/20 group-hover:text-foreground/50 transition-colors duration-500 shrink-0 ml-4" />
+              </a>
+            ))}
+            <div className="border-t border-foreground/[0.06]" />
+          </div>
+        </Reveal>
+
+        <Reveal delay={200} className="mt-16 md:mt-28">
           <p className="text-[11px] tracking-[0.3em] uppercase mb-10 md:mb-16" style={{ color: "#666666" }}>
             {t("Work", "活動")}
           </p>
@@ -149,35 +181,6 @@ export function InitiativesSection() {
           ))}
           <div className="border-t border-foreground/[0.06]" />
         </div>
-
-        <Reveal delay={200} className="mt-12 md:mt-20">
-          <p className="text-[11px] tracking-[0.3em] uppercase mb-8 md:mb-10" style={{ color: "#666666" }}>
-            {t("Content Archive", "コンテンツアーカイブ")}
-          </p>
-          <div className="space-y-0">
-            {links.map((link, i) => (
-              <a
-                key={i}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-between py-4 border-t border-foreground/[0.06] transition-colors duration-500 hover:bg-foreground/[0.02]"
-                data-testid={`link-archive-${i}`}
-              >
-                <div>
-                  <p className="text-sm text-foreground/60 group-hover:text-foreground/80 transition-colors duration-500">
-                    {lang === "en" ? link.titleEn : link.titleJa}
-                  </p>
-                  <p className="mt-0.5 text-[11px] text-foreground/25">
-                    {lang === "en" ? link.descEn : link.descJa}
-                  </p>
-                </div>
-                <ArrowUpRight className="w-3.5 h-3.5 text-foreground/20 group-hover:text-foreground/50 transition-colors duration-500 shrink-0 ml-4" />
-              </a>
-            ))}
-            <div className="border-t border-foreground/[0.06]" />
-          </div>
-        </Reveal>
       </div>
     </section>
   );
