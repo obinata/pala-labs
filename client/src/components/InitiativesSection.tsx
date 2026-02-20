@@ -118,7 +118,7 @@ export function InitiativesSection() {
 
         <Reveal delay={200} className="mt-16 md:mt-28">
           <p className="text-[11px] tracking-[0.3em] uppercase mb-10 md:mb-16" style={{ color: "#666666" }}>
-            {t("Work", "活動")}
+            {t("Initiatives", "イニシアチブ")}
           </p>
         </Reveal>
 
