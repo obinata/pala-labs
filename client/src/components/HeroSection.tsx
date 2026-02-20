@@ -14,10 +14,10 @@ export function HeroSection() {
   return (
     <section
       data-testid="section-hero"
-      className="relative min-h-[80vh] md:min-h-[85vh] flex items-end pb-6 md:pb-10 overflow-hidden"
+      className="relative min-h-[80vh] md:min-h-[85vh] flex flex-col justify-end pb-6 md:pb-10 overflow-hidden"
     >
       <div
-        className={`absolute right-0 bottom-[15%] md:bottom-[10%] w-[60%] md:w-[40%] h-[45%] md:h-[65%] pointer-events-none transition-opacity duration-[18s] delay-200 ease-out ${
+        className={`absolute right-0 bottom-[35%] sm:bottom-[15%] md:bottom-[10%] w-[50%] sm:w-[60%] md:w-[40%] h-[35%] sm:h-[45%] md:h-[65%] pointer-events-none transition-opacity duration-[18s] delay-200 ease-out ${
           mounted ? "opacity-100" : "opacity-0"
         }`}
       >
