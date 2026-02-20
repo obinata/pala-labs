@@ -88,7 +88,7 @@ export function InitiativesSection() {
           <p className="text-2xl md:text-3xl font-normal leading-[1.4] max-w-2xl mb-16 md:mb-24" style={{ fontFamily: "'Radley', 'Sawarabi Mincho', serif", color: "#494949" }}>
             {t(
               "Every initiative we run, every community we contribute, every idea we publish — all in service of sovereign individuals.",
-              "私たちが行うすべてのイニシアチブ、貢献するすべてのコミュニティ、発信するすべてのアイデア — すべては自律した個人のために。"
+              "私たちが行うイニシアチブ、貢献するコミュニティ、発信するアイデア — すべては自律した個人のために"
             )}
           </p>
         </Reveal>
