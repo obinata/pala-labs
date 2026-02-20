@@ -50,10 +50,10 @@ export function HeroSection() {
             mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="text-sm max-w-md leading-relaxed" style={{ color: "#666666" }}>
+          <p className="text-sm max-w-md leading-relaxed" style={{ color: "#666666", whiteSpace: "pre-line" }}>
             {t(
               "Research, advocacy, and community for a self-sovereign future.",
-              "研究・発信・コミュニティを通じて、自律した未来を追求する"
+              "人間のためのテクノロジーを\n自由な個人の手に"
             )}
           </p>
         </div>
