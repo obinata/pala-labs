@@ -45,7 +45,7 @@ export function AboutSection() {
         <div className="grid md:grid-cols-12 gap-10 md:gap-12 mb-20 md:mb-32">
           <div className="md:col-span-7">
             <Reveal delay={100}>
-              <p className="text-2xl md:text-3xl font-normal leading-[1.4] text-foreground/80 max-w-xl" style={{ fontFamily: "'Radley', serif", color: "#494949" }}>
+              <p className="text-2xl md:text-3xl font-normal leading-[1.4] text-foreground/80 max-w-xl" style={{ fontFamily: "'Radley', 'AR Mincho', serif", color: "#494949" }}>
                 {t(
                   "From counterculture to decentralized technologies — sovereignty is not given. It's built.",
                   "カウンターカルチャーから分散型テクノロジーへ — 主権は与えられるものではない。築くものだ。"
