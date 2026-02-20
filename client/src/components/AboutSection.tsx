@@ -1,6 +1,6 @@
 import { useLang } from "@/lib/i18n";
 import { useScrollReveal } from "@/lib/useScrollReveal";
-import philosophyImg from "@assets/screenshot-2024-12-18-at-22.00.17-AzG3vK3QEKt3EXJE_1771175866815.avif";
+import philosophyImg from "@assets/San_Francisco_One_Line_Skyline_Poster_(396_x_666_px)_1771611133543.png";
 import bookImg from "@assets/IMG_1128_1771395263441.JPG";
 
 function Reveal({
