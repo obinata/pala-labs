@@ -86,7 +86,7 @@ export function AboutSection() {
                 <p>
                   {t(
                     "Pala takes its name from the fictional island in Aldous Huxley's final novel, Island (1962) — a world where human agency comes before technological progress. Not the dystopia of Brave New World, but its alternative: a community that chooses how it lives. That's the vision we're working towards.",
-                    "Palaという名前は、オルダス・ハクスリーの最後の小説『島』（1962年）に登場する架空の島に由来します。西洋科学と東洋思想が調和し、テクノロジーの進歩よりも人間の主体性が優先される世界。それは彼のもう一つの名著『すばらしい新世界』が描いたディストピアのアンチテーゼであり、ひとりひとりが自らの生き方を選ぶ世界。それが私たちの目指すビジョンであり、\"Self-Sovereign\"の本質です。"
+                    "Palaという名前は、オルダス・ハクスリーの最後の小説『島』（1962年）に登場する架空の島に由来します。西洋科学と東洋思想が調和し、テクノロジーの進歩よりも人間の主体性が優先される社会。それは彼のもう一つの名著『すばらしい新世界』が描いたディストピアへのアンチテーゼであり、ひとりひとりが自らの生き方をするビジョンです。それは私たちの目指す姿とも重なる、\"Self-Sovereign\"の本質だと考えます。"
                   )}
                 </p>
               </div>
