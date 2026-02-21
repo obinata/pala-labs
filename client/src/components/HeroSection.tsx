@@ -40,7 +40,7 @@ export function HeroSection() {
           <h1 className="text-[clamp(1.5rem,3.5vw,3rem)] font-normal leading-[1.1] tracking-[-0.01em] text-foreground max-w-2xl" style={{ fontFamily: "'Radley', 'Sawarabi Mincho', serif", color: "#494949", whiteSpace: "pre-line" }}>
             {t(
               "The lab for sovereign technology and sovereign individuals.",
-              "人間のためのテクノロジー\n自由な個人の手に"
+              "人間のためのテクノロジーを\n自由な個人の手に"
             )}
           </h1>
         </div>
@@ -53,7 +53,7 @@ export function HeroSection() {
           <p className="text-sm max-w-md leading-relaxed" style={{ color: "#666666", whiteSpace: "pre-line" }}>
             {t(
               "Research, advocacy, and community for a self-sovereign future.",
-              "人間のためのテクノロジーを\n自由な個人の手に"
+              "研究・発信・コミュニティを通じて、自律した未来を追求する"
             )}
           </p>
         </div>
