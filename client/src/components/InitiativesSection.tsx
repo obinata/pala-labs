@@ -34,7 +34,7 @@ const works = [
     subtitleEn: "The OS for Polkadot OpenGov",
     subtitleJa: "Polkadot OpenGovのためのOS",
     descEn: "Delivering radical transparency through curated data and expert analysis. We provide the essential context for navigating and understanding the evolution of Polkadot governance.",
-    descJa: "厳選されたデータと専門家の分析を通じて徹底的な透明性を実現。Polkadotガバナンスの進化を理解し、ナビゲートするための必要不可欠なコンテクストを提供します。",
+    descJa: "オンチェーンデータの分析を通じて徹底的な透明性を実現。広範囲に広がったPolkadotガバナンスの現在地を可視化し、ナビゲートするために必要不可欠なコンテクストを提供。",
     tagEn: "Tool",
     tagJa: "ツール",
     link: "https://openshore.io/",
