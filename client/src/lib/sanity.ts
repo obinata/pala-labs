@@ -32,3 +32,17 @@ export const blogPostQuery = `*[_type == "blogPost"] | order(publishedAt desc) {
   "imageUrl": image.asset->url,
   publishedAt
 }`;
+
+export const blogPostByIdQuery = (id: string) =>
+  `*[_type == "blogPost" && _id == "${id}"][0] {
+  _id,
+  titleEn,
+  titleJa,
+  excerptEn,
+  excerptJa,
+  contentEn,
+  contentJa,
+  category,
+  "imageUrl": image.asset->url,
+  publishedAt
+}`;
