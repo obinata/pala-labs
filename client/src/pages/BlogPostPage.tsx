@@ -6,7 +6,52 @@ import { sanityClient, blogPostByIdQuery, type SanityBlogPost } from "@/lib/sani
 import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import { ArrowLeft } from "lucide-react";
 
+function getYouTubeId(url: string): string | null {
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/,
+    /youtube\.com\/shorts\/([a-zA-Z0-9_-]{11})/,
+  ];
+  for (const pattern of patterns) {
+    const match = url.match(pattern);
+    if (match) return match[1];
+  }
+  return null;
+}
+
 const portableTextComponents: PortableTextComponents = {
+  types: {
+    image: ({ value }: { value: { url?: string; alt?: string } }) => {
+      if (!value?.url) return null;
+      return (
+        <div className="my-8">
+          <img
+            src={value.url}
+            alt={value.alt || ""}
+            className="w-full rounded-sm"
+            loading="lazy"
+            data-testid="img-blog-inline"
+          />
+        </div>
+      );
+    },
+    youtube: ({ value }: { value: { url?: string } }) => {
+      if (!value?.url) return null;
+      const videoId = getYouTubeId(value.url);
+      if (!videoId) return null;
+      return (
+        <div className="my-8 relative w-full" style={{ paddingBottom: "56.25%" }} data-testid="embed-youtube">
+          <iframe
+            src={`https://www.youtube.com/embed/${videoId}`}
+            title="YouTube video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="absolute inset-0 w-full h-full rounded-sm"
+            loading="lazy"
+          />
+        </div>
+      );
+    },
+  },
   block: {
     h2: ({ children }) => (
       <h2 className="text-xl md:text-2xl font-normal mt-10 mb-4" style={{ fontFamily: "'Radley', 'Sawarabi Mincho', serif", color: "#494949" }}>

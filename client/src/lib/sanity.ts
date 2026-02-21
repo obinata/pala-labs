@@ -26,8 +26,16 @@ export const blogPostQuery = `*[_type == "blogPost"] | order(publishedAt desc) {
   titleJa,
   excerptEn,
   excerptJa,
-  contentEn,
-  contentJa,
+  contentEn[] {
+    ...,
+    _type == "image" => { ..., "url": asset->url },
+    _type == "youtube" => { ..., url }
+  },
+  contentJa[] {
+    ...,
+    _type == "image" => { ..., "url": asset->url },
+    _type == "youtube" => { ..., url }
+  },
   category,
   "imageUrl": image.asset->url,
   publishedAt
@@ -40,8 +48,16 @@ export const blogPostByIdQuery = (id: string) =>
   titleJa,
   excerptEn,
   excerptJa,
-  contentEn,
-  contentJa,
+  contentEn[] {
+    ...,
+    _type == "image" => { ..., "url": asset->url },
+    _type == "youtube" => { ..., url }
+  },
+  contentJa[] {
+    ...,
+    _type == "image" => { ..., "url": asset->url },
+    _type == "youtube" => { ..., url }
+  },
   category,
   "imageUrl": image.asset->url,
   publishedAt
