@@ -121,9 +121,7 @@ export function InitiativesSection() {
                     </p>
                   </div>
                 </div>
-                <span className="text-[10px] tracking-[0.15em] uppercase text-foreground/20 group-hover:text-foreground/40 transition-colors duration-500 shrink-0 ml-4 hidden sm:block">
-                  {t("View", "見る")}
-                </span>
+                <ArrowUpRight className="w-3.5 h-3.5 text-foreground/20 group-hover:text-foreground/50 transition-all duration-500 shrink-0 ml-4" />
               </a>
             ))}
             <div className="border-t border-foreground/[0.06]" />
