@@ -2,6 +2,7 @@ import { useLang } from "@/lib/i18n";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 import { useQuery } from "@tanstack/react-query";
 import { sanityClient, blogPostQuery, type SanityBlogPost } from "@/lib/sanity";
+import { Link } from "wouter";
 
 function Reveal({
   children,
@@ -37,29 +38,31 @@ function PostRow({ post, index }: { post: SanityBlogPost; index: number }) {
 
   return (
     <Reveal delay={index * 80}>
-      <article
-        className="group py-8 border-t border-foreground/[0.06] cursor-pointer"
-        data-testid={`card-blog-${post._id}`}
-      >
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
-          <div className="flex-1 min-w-0">
-            <h3 className="text-xl md:text-2xl font-normal text-foreground/70 group-hover:text-foreground/90 transition-colors duration-500" style={{ fontFamily: "'Radley', 'Sawarabi Mincho', serif", color: "#494949" }}>
-              {title}
-            </h3>
-            <p className="mt-2 text-[13px] leading-relaxed max-w-lg line-clamp-2" style={{ color: "#666666" }}>
-              {excerpt}
-            </p>
+      <Link href={`/blog/${post._id}`} className="block">
+        <article
+          className="group py-8 border-t border-foreground/[0.06] cursor-pointer"
+          data-testid={`card-blog-${post._id}`}
+        >
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
+            <div className="flex-1 min-w-0">
+              <h3 className="text-xl md:text-2xl font-normal text-foreground/70 group-hover:text-foreground/90 transition-colors duration-500" style={{ fontFamily: "'Radley', 'Sawarabi Mincho', serif", color: "#494949" }}>
+                {title}
+              </h3>
+              <p className="mt-2 text-[13px] leading-relaxed max-w-lg line-clamp-2" style={{ color: "#666666" }}>
+                {excerpt}
+              </p>
+            </div>
+            <div className="flex items-center gap-4 shrink-0 md:mt-1">
+              <span className="text-[10px] tracking-[0.2em] uppercase" style={{ color: "#666666" }}>
+                {post.category}
+              </span>
+              <span className="text-[11px] text-foreground/20">
+                {date}
+              </span>
+            </div>
           </div>
-          <div className="flex items-center gap-4 shrink-0 md:mt-1">
-            <span className="text-[10px] tracking-[0.2em] uppercase" style={{ color: "#666666" }}>
-              {post.category}
-            </span>
-            <span className="text-[11px] text-foreground/20">
-              {date}
-            </span>
-          </div>
-        </div>
-      </article>
+        </article>
+      </Link>
     </Reveal>
   );
 }

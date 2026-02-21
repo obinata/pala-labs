@@ -8,6 +8,7 @@ import Home from "@/pages/Home";
 import PhilosophyPage from "@/pages/PhilosophyPage";
 import WorkPage from "@/pages/WorkPage";
 import BlogPage from "@/pages/BlogPage";
+import BlogPostPage from "@/pages/BlogPostPage";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -17,6 +18,7 @@ function Router() {
       <Route path="/philosophy" component={PhilosophyPage} />
       <Route path="/work" component={WorkPage} />
       <Route path="/blog" component={BlogPage} />
+      <Route path="/blog/:id" component={BlogPostPage} />
       <Route component={NotFound} />
     </Switch>
   );
