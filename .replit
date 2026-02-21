@@ -43,3 +43,6 @@ waitForPort = 5000
 [userenv.shared]
 VITE_SANITY_PROJECT_ID = "iot4hik7"
 VITE_SANITY_DATASET = "production"
+
+[agent]
+integrations = ["github:1.0.0"]
