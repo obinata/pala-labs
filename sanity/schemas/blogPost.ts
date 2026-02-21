@@ -13,13 +13,13 @@ export default {
       name: "titleJa",
       title: "Title (JA)",
       type: "string",
-      validation: (Rule: any) => Rule.required(),
     },
     {
       name: "excerptEn",
       title: "Excerpt (EN)",
       type: "text",
       rows: 3,
+      validation: (Rule: any) => Rule.required(),
     },
     {
       name: "excerptJa",
@@ -31,6 +31,7 @@ export default {
       name: "contentEn",
       title: "Content (EN)",
       type: "text",
+      validation: (Rule: any) => Rule.required(),
     },
     {
       name: "contentJa",
