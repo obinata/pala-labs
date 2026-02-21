@@ -9,6 +9,7 @@ export const sanityClient = createClient({
 
 export interface SanityBlogPost {
   _id: string;
+  slug: string;
   titleEn: string;
   titleJa: string;
   excerptEn: string;
@@ -22,6 +23,7 @@ export interface SanityBlogPost {
 
 export const blogPostQuery = `*[_type == "blogPost"] | order(publishedAt desc) {
   _id,
+  "slug": slug.current,
   titleEn,
   titleJa,
   excerptEn,
@@ -41,9 +43,10 @@ export const blogPostQuery = `*[_type == "blogPost"] | order(publishedAt desc) {
   publishedAt
 }`;
 
-export const blogPostByIdQuery = (id: string) =>
-  `*[_type == "blogPost" && _id == "${id}"][0] {
+export const blogPostBySlugQuery = (slug: string) =>
+  `*[_type == "blogPost" && slug.current == "${slug}"][0] {
   _id,
+  "slug": slug.current,
   titleEn,
   titleJa,
   excerptEn,

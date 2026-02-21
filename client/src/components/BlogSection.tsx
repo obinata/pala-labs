@@ -38,7 +38,7 @@ function PostRow({ post, index }: { post: SanityBlogPost; index: number }) {
 
   return (
     <Reveal delay={index * 80}>
-      <Link href={`/blog/${post._id}`} className="block">
+      <Link href={`/blog/${post.slug}`} className="block">
         <article
           className="group py-8 border-t border-foreground/[0.06] cursor-pointer"
           data-testid={`card-blog-${post._id}`}

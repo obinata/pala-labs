@@ -2,7 +2,7 @@ import { PageLayout } from "@/components/PageLayout";
 import { useLang } from "@/lib/i18n";
 import { useQuery } from "@tanstack/react-query";
 import { useParams, Link } from "wouter";
-import { sanityClient, blogPostByIdQuery, type SanityBlogPost } from "@/lib/sanity";
+import { sanityClient, blogPostBySlugQuery, type SanityBlogPost } from "@/lib/sanity";
 import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import { ArrowLeft } from "lucide-react";
 
@@ -110,13 +110,13 @@ const portableTextComponents: PortableTextComponents = {
 };
 
 export default function BlogPostPage() {
-  const { id } = useParams<{ id: string }>();
+  const { slug } = useParams<{ slug: string }>();
   const { lang, t } = useLang();
 
   const { data: post, isLoading } = useQuery<SanityBlogPost | null>({
-    queryKey: ["sanity-blog-post", id],
-    queryFn: () => sanityClient.fetch(blogPostByIdQuery(id!)),
-    enabled: !!id,
+    queryKey: ["sanity-blog-post", slug],
+    queryFn: () => sanityClient.fetch(blogPostBySlugQuery(slug!)),
+    enabled: !!slug,
   });
 
   const title = post ? (lang === "en" ? post.titleEn : (post.titleJa || post.titleEn)) : "";
