@@ -107,18 +107,23 @@ export function InitiativesSection() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between py-4 border-t border-foreground/[0.06] transition-colors duration-500 hover:bg-foreground/[0.02]"
+                className="group flex items-center justify-between py-5 px-4 -mx-4 border-t border-foreground/[0.08] transition-all duration-500 hover:bg-foreground/[0.03] rounded-md cursor-pointer"
                 data-testid={`link-archive-${i}`}
               >
-                <div>
-                  <p className="text-sm text-foreground/60 group-hover:text-foreground/80 transition-colors duration-500">
-                    {link.titleEn}
-                  </p>
-                  <p className="mt-0.5 text-[11px] text-foreground/25">
-                    {link.descEn}
-                  </p>
+                <div className="flex items-center gap-3">
+                  <ArrowUpRight className="w-4 h-4 text-foreground/25 group-hover:text-foreground/60 transition-all duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0" />
+                  <div>
+                    <p className="text-sm text-foreground/70 group-hover:text-foreground/90 transition-colors duration-500">
+                      {link.titleEn}
+                    </p>
+                    <p className="mt-0.5 text-[11px] text-foreground/30">
+                      {link.descEn}
+                    </p>
+                  </div>
                 </div>
-                <ArrowUpRight className="w-3.5 h-3.5 text-foreground/20 group-hover:text-foreground/50 transition-colors duration-500 shrink-0 ml-4" />
+                <span className="text-[10px] tracking-[0.15em] uppercase text-foreground/20 group-hover:text-foreground/40 transition-colors duration-500 shrink-0 ml-4 hidden sm:block">
+                  {t("View", "見る")}
+                </span>
               </a>
             ))}
             <div className="border-t border-foreground/[0.06]" />
@@ -153,7 +158,7 @@ export function InitiativesSection() {
                         href={item.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 mt-4 text-[12px] tracking-[0.1em] text-foreground/40 underline underline-offset-4 decoration-foreground/15 hover:text-foreground/70 hover:decoration-foreground/30 transition-colors duration-500"
+                        className="inline-flex items-center gap-2 mt-5 px-4 py-2 text-[12px] tracking-[0.1em] text-foreground/50 border border-foreground/10 rounded-full hover:text-foreground/80 hover:border-foreground/25 hover:bg-foreground/[0.02] transition-all duration-500"
                         data-testid={`link-work-${i}`}
                       >
                         <span>{item.link.replace(/^https?:\/\//, "")}</span>
