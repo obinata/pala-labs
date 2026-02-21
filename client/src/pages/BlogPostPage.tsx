@@ -3,7 +3,66 @@ import { useLang } from "@/lib/i18n";
 import { useQuery } from "@tanstack/react-query";
 import { useParams, Link } from "wouter";
 import { sanityClient, blogPostByIdQuery, type SanityBlogPost } from "@/lib/sanity";
+import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import { ArrowLeft } from "lucide-react";
+
+const portableTextComponents: PortableTextComponents = {
+  block: {
+    h2: ({ children }) => (
+      <h2 className="text-xl md:text-2xl font-normal mt-10 mb-4" style={{ fontFamily: "'Radley', 'Sawarabi Mincho', serif", color: "#494949" }}>
+        {children}
+      </h2>
+    ),
+    h3: ({ children }) => (
+      <h3 className="text-lg md:text-xl font-normal mt-8 mb-3" style={{ fontFamily: "'Radley', 'Sawarabi Mincho', serif", color: "#494949" }}>
+        {children}
+      </h3>
+    ),
+    h4: ({ children }) => (
+      <h4 className="text-base md:text-lg font-normal mt-6 mb-2" style={{ fontFamily: "'Radley', 'Sawarabi Mincho', serif", color: "#494949" }}>
+        {children}
+      </h4>
+    ),
+    normal: ({ children }) => (
+      <p className="mb-5 text-[15px] leading-[1.9]" style={{ color: "#555555" }}>
+        {children}
+      </p>
+    ),
+    blockquote: ({ children }) => (
+      <blockquote className="border-l-2 border-foreground/10 pl-5 my-6 italic text-[15px] leading-[1.9]" style={{ color: "#777777" }}>
+        {children}
+      </blockquote>
+    ),
+  },
+  marks: {
+    strong: ({ children }) => <strong className="font-semibold" style={{ color: "#494949" }}>{children}</strong>,
+    em: ({ children }) => <em>{children}</em>,
+    code: ({ children }) => (
+      <code className="text-[13px] px-1.5 py-0.5 rounded bg-foreground/[0.04]" style={{ fontFamily: "monospace" }}>
+        {children}
+      </code>
+    ),
+    link: ({ children, value }) => (
+      <a
+        href={value?.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline underline-offset-2 decoration-foreground/20 hover:decoration-foreground/40 transition-colors duration-300"
+        style={{ color: "#494949" }}
+      >
+        {children}
+      </a>
+    ),
+  },
+  list: {
+    bullet: ({ children }) => <ul className="list-disc pl-6 mb-5 space-y-1">{children}</ul>,
+    number: ({ children }) => <ol className="list-decimal pl-6 mb-5 space-y-1">{children}</ol>,
+  },
+  listItem: {
+    bullet: ({ children }) => <li className="text-[15px] leading-[1.9]" style={{ color: "#555555" }}>{children}</li>,
+    number: ({ children }) => <li className="text-[15px] leading-[1.9]" style={{ color: "#555555" }}>{children}</li>,
+  },
+};
 
 export default function BlogPostPage() {
   const { id } = useParams<{ id: string }>();
@@ -16,7 +75,7 @@ export default function BlogPostPage() {
   });
 
   const title = post ? (lang === "en" ? post.titleEn : (post.titleJa || post.titleEn)) : "";
-  const content = post ? (lang === "en" ? post.contentEn : (post.contentJa || post.contentEn)) : "";
+  const content = post ? (lang === "en" ? post.contentEn : (post.contentJa || post.contentEn)) : null;
   const excerpt = post ? (lang === "en" ? post.excerptEn : (post.excerptJa || post.excerptEn)) : "";
   const date = post
     ? new Date(post.publishedAt).toLocaleDateString(
@@ -94,13 +153,9 @@ export default function BlogPostPage() {
                   </div>
                 )}
 
-                {content && (
-                  <div
-                    className="prose-custom text-[15px] leading-[1.9] whitespace-pre-wrap"
-                    style={{ color: "#555555" }}
-                    data-testid="text-blog-content"
-                  >
-                    {content}
+                {content && Array.isArray(content) && content.length > 0 && (
+                  <div data-testid="text-blog-content">
+                    <PortableText value={content} components={portableTextComponents} />
                   </div>
                 )}
               </article>

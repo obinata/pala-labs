@@ -13,8 +13,8 @@ export interface SanityBlogPost {
   titleJa: string;
   excerptEn: string;
   excerptJa: string;
-  contentEn?: string;
-  contentJa?: string;
+  contentEn?: any[];
+  contentJa?: any[];
   category: string;
   imageUrl?: string;
   publishedAt: string;
