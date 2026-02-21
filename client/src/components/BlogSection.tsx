@@ -1,7 +1,7 @@
 import { useLang } from "@/lib/i18n";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 import { useQuery } from "@tanstack/react-query";
-import type { BlogPost } from "@shared/schema";
+import { sanityClient, blogPostQuery, type SanityBlogPost } from "@/lib/sanity";
 
 function Reveal({
   children,
@@ -26,7 +26,7 @@ function Reveal({
   );
 }
 
-function PostRow({ post, index }: { post: BlogPost; index: number }) {
+function PostRow({ post, index }: { post: SanityBlogPost; index: number }) {
   const { lang } = useLang();
   const title = lang === "en" ? post.titleEn : post.titleJa;
   const excerpt = lang === "en" ? post.excerptEn : post.excerptJa;
@@ -39,7 +39,7 @@ function PostRow({ post, index }: { post: BlogPost; index: number }) {
     <Reveal delay={index * 80}>
       <article
         className="group py-8 border-t border-foreground/[0.06] cursor-pointer"
-        data-testid={`card-blog-${post.id}`}
+        data-testid={`card-blog-${post._id}`}
       >
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
           <div className="flex-1 min-w-0">
@@ -67,8 +67,9 @@ function PostRow({ post, index }: { post: BlogPost; index: number }) {
 export function BlogSection() {
   const { t } = useLang();
 
-  const { data: posts, isLoading } = useQuery<BlogPost[]>({
-    queryKey: ["/api/blog"],
+  const { data: posts, isLoading } = useQuery<SanityBlogPost[]>({
+    queryKey: ["sanity-blog-posts"],
+    queryFn: () => sanityClient.fetch(blogPostQuery),
   });
 
   return (
@@ -97,7 +98,7 @@ export function BlogSection() {
         ) : posts && posts.length > 0 ? (
           <div className="space-y-0">
             {posts.map((post, i) => (
-              <PostRow key={post.id} post={post} index={i} />
+              <PostRow key={post._id} post={post} index={i} />
             ))}
             <div className="border-t border-foreground/[0.06]" />
           </div>
