@@ -115,7 +115,7 @@ export function InitiativesSection() {
                     {link.titleEn}
                   </p>
                   <p className="mt-0.5 text-[11px] text-foreground/25">
-                    {lang === "en" ? link.descEn : link.descJa}
+                    {link.descEn}
                   </p>
                 </div>
                 <ArrowUpRight className="w-3.5 h-3.5 text-foreground/20 group-hover:text-foreground/50 transition-colors duration-500 shrink-0 ml-4" />
