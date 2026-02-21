@@ -33,7 +33,7 @@ function PostRow({ post, index }: { post: SanityBlogPost; index: number }) {
   const excerpt = lang === "en" ? post.excerptEn : post.excerptJa;
   const date = new Date(post.publishedAt).toLocaleDateString(
     lang === "en" ? "en-US" : "ja-JP",
-    { year: "numeric", month: "short" }
+    { year: "numeric", month: "short", day: "numeric" }
   );
 
   return (
