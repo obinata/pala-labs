@@ -42,7 +42,7 @@ const works = [
   },
   {
     titleEn: "JAM Tour",
-    titleJa: "JAMツアー",
+    titleJa: "JAM Tour",
     subtitleEn: null,
     subtitleJa: null,
     descEn: "Global educational tour featuring the JAM protocol by Dr. Gavin Wood. Spanning 9 locations at world-renowned universities; including Cambridge, India, Taiwan, Hong Kong, and China. The series engaged 1,300+ in-person attendees and generated over 500,000 views to date.",
@@ -58,7 +58,7 @@ const works = [
     subtitleEn: null,
     subtitleJa: null,
     descEn: "An academic lecture series delivered at prestigious institutions including Stanford, Singapore's NUS, UTokyo, ETH Zurich, and Seoul National University. This initiative successfully attracted 15+ independent implementer teams dedicated to bringing the JAM specifications to life.",
-    descJa: "スタンフォード、シンガポールNUS、東大、ETHチューリッヒ、ソウル大学を含む名門機関で行われた学術講義シリーズ。このイニシアチブは、JAM仕様の実現に取り組む15以上の独立した実装チームを惹きつけることに成功しました。",
+    descJa: "スタンフォード、シンガポール国立大学、東京大学、ETHチューリッヒ、ソウル国立大学を含む名門教育機関で行われた学術講義シリーズ。このイニシアチブは、イーサリアムイエローペーパーに続くグレイペーパー（JAM仕様）の実現に取り組む15以上の独立した実装チームを惹きつけることに成功しました。",
     tagEn: "Education",
     tagJa: "教育",
     link: null as string | null,
