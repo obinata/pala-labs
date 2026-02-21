@@ -37,3 +37,9 @@ author = "agent"
 task = "shell.exec"
 args = "npm run dev"
 waitForPort = 5000
+
+[userenv]
+
+[userenv.shared]
+VITE_SANITY_PROJECT_ID = "iot4hik7"
+VITE_SANITY_DATASET = "production"
