@@ -29,8 +29,8 @@ function Reveal({
 
 function PostRow({ post, index }: { post: SanityBlogPost; index: number }) {
   const { lang } = useLang();
-  const title = lang === "en" ? post.titleEn : post.titleJa;
-  const excerpt = lang === "en" ? post.excerptEn : post.excerptJa;
+  const title = (lang === "ja" && post.titleJa) ? post.titleJa : post.titleEn;
+  const excerpt = (lang === "ja" && post.excerptJa) ? post.excerptJa : post.excerptEn;
   const date = new Date(post.publishedAt).toLocaleDateString(
     lang === "en" ? "en-US" : "ja-JP",
     { year: "numeric", month: "short", day: "numeric" }

@@ -119,9 +119,9 @@ export default function BlogPostPage() {
     enabled: !!slug,
   });
 
-  const title = post ? (lang === "en" ? post.titleEn : (post.titleJa || post.titleEn)) : "";
-  const content = post ? (lang === "en" ? post.contentEn : (post.contentJa || post.contentEn)) : null;
-  const excerpt = post ? (lang === "en" ? post.excerptEn : (post.excerptJa || post.excerptEn)) : "";
+  const title = post ? ((lang === "ja" && post.titleJa) ? post.titleJa : post.titleEn) : "";
+  const content = post ? ((lang === "ja" && post.contentJa && post.contentJa.length > 0) ? post.contentJa : post.contentEn) : null;
+  const excerpt = post ? ((lang === "ja" && post.excerptJa) ? post.excerptJa : post.excerptEn) : "";
   const date = post
     ? new Date(post.publishedAt).toLocaleDateString(
         lang === "en" ? "en-US" : "ja-JP",
