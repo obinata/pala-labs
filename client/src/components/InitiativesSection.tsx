@@ -46,7 +46,7 @@ const works = [
     subtitleEn: null,
     subtitleJa: null,
     descEn: "Global educational tour featuring the JAM protocol by Dr. Gavin Wood. Spanning 9 locations at world-renowned universities; including Cambridge, India, Taiwan, Hong Kong, and China. The series engaged 1,300+ in-person attendees and generated over 500,000 views to date.",
-    descJa: "Dr. Gavin WoodによるJAMプロトコルをフィーチャーしたグローバル教育ツアー。ケンブリッジ、インド、台湾、香港、中国を含む世界的に有名な大学9カ所で開催。1,300人以上の参加者を集め、これまでに50万回以上の視聴を記録しています。",
+    descJa: "イーサリアムおよびポルカドットの共同創設者Dr. Gavin Woodによる、技術者や学生向けのグローバル教育ツアー。ケンブリッジ、インド、台湾、香港、中国複数都市を含む世界的に著名な大学研究機関9カ所で開催。1,300人以上のイベント参加者を集め、アーカイブはこれまでに50万回以上視聴されました。",
     tagEn: "Education",
     tagJa: "教育",
     link: null as string | null,
