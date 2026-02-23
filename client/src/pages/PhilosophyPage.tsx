@@ -17,7 +17,10 @@ function AboutIntroSection() {
           About
         </p>
         <p className="text-2xl md:text-3xl font-normal leading-[1.4] max-w-xl" style={{ fontFamily: "'Radley', 'Sawarabi Mincho', serif", color: "#494949" }}>
-          Pala Labs is the xxxxxxxxxxxxxxxxxxx
+          Pala Labs is a curator and guide for Sovereign Technology.
+        </p>
+        <p className="mt-8 md:mt-12 text-sm leading-[1.8] max-w-lg" style={{ color: "#666666" }}>
+          Sovereign Technology - technology designed to protect the autonomy of its users; open-source, verifiable, and built to serve whether for individuals, communities, and nations. We select what matters in this movement and deliver it to the world through governance tools, education, and community.
         </p>
       </div>
     </section>
