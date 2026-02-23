@@ -69,7 +69,7 @@ export function Navigation() {
           </div>
         </div>
 
-        <div className="flex md:hidden items-center justify-between h-12">
+        <div className="flex md:hidden items-center justify-end h-12">
           <div className="flex items-center">
             <button
               onClick={toggleLang}
