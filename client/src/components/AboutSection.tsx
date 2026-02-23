@@ -64,7 +64,7 @@ export function AboutSection() {
           </div>
 
           <div className="md:col-span-5 md:col-start-8">
-            <Reveal delay={300}>
+            <Reveal delay={0}>
               <div
                 className="relative aspect-[3/4] overflow-hidden max-w-[220px] md:max-w-[360px] ml-auto"
                 style={{ borderRadius: "50% 45% 48% 50% / 25% 30% 28% 22%" }}
@@ -102,7 +102,7 @@ export function AboutSection() {
           </div>
 
           <div className="md:col-span-5 order-2 md:order-1">
-            <Reveal delay={100}>
+            <Reveal delay={0}>
               <div
                 className="relative aspect-[3/4] overflow-hidden max-w-[220px] md:max-w-[360px]"
                 style={{ borderRadius: "48% 50% 45% 50% / 28% 22% 25% 30%" }}
