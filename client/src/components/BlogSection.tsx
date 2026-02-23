@@ -53,10 +53,10 @@ function PostRow({ post, index }: { post: SanityBlogPost; index: number }) {
               </p>
             </div>
             <div className="flex items-center gap-4 shrink-0 md:mt-1">
-              <span className="text-[10px] tracking-[0.2em] uppercase" style={{ color: "#666666" }}>
+              <span className="text-[10px] tracking-[0.15em] uppercase" style={{ color: "#999999" }}>
                 {post.category}
               </span>
-              <span className="text-[11px] text-foreground/20">
+              <span className="text-[12px] tabular-nums" style={{ color: "#666666" }}>
                 {date}
               </span>
             </div>
