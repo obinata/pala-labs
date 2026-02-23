@@ -29,7 +29,7 @@ function AboutIntroSection() {
         </p>
         <a
           href="/work"
-          className="inline-flex items-center gap-2 mt-6 text-sm text-foreground/50 hover:text-foreground/80 transition-colors duration-500"
+          className="inline-flex items-center gap-2 mt-6 px-4 py-2 text-[12px] tracking-[0.1em] text-foreground/50 border border-foreground/10 rounded-full hover:text-foreground/80 hover:border-foreground/25 hover:bg-foreground/[0.02] transition-all duration-500"
           data-testid="link-see-initiatives"
         >
           <span>{t("See our initiatives", "イニシアチブを見る")}</span>
