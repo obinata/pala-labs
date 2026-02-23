@@ -47,7 +47,7 @@ export function PageLayout({
   }, []);
 
   return (
-    <div className="min-h-screen bg-background relative">
+    <div className="min-h-screen bg-background relative overflow-hidden">
       <div className="fixed inset-[-30px] pointer-events-none z-[0] ambient-glow" ref={glowRef} />
       <div className="fixed inset-0 pointer-events-none grain-overlay z-[1]" />
       <div className="relative z-[2]">
