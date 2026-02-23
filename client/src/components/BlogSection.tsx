@@ -66,9 +66,9 @@ function PostRow({ post, index }: { post: SanityBlogPost; index: number }) {
             {thumbnail && (
               <div className="shrink-0">
                 <img
-                  src={thumbnail + "?w=160&h=160&fit=crop&auto=format"}
+                  src={thumbnail + "?w=320&h=180&fit=crop&auto=format"}
                   alt=""
-                  className="w-[60px] h-[60px] md:w-[80px] md:h-[80px] object-cover rounded-[50%_50%_50%_50%/40%_40%_60%_60%] opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                  className="w-[120px] h-[68px] md:w-[160px] md:h-[90px] object-cover rounded-[4px] opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                   loading="lazy"
                   data-testid={`img-blog-thumbnail-${post._id}`}
                 />
