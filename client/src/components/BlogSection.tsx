@@ -35,6 +35,7 @@ function PostRow({ post, index }: { post: SanityBlogPost; index: number }) {
     lang === "en" ? "en-US" : "ja-JP",
     { year: "numeric", month: "short", day: "numeric" }
   );
+  const thumbnail = post.featuredImageUrl || post.imageUrl;
 
   return (
     <Reveal delay={index * 80}>
@@ -43,23 +44,36 @@ function PostRow({ post, index }: { post: SanityBlogPost; index: number }) {
           className="group py-8 border-t border-foreground/[0.06] cursor-pointer"
           data-testid={`card-blog-${post._id}`}
         >
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
-            <div className="flex-1 min-w-0">
-              <h3 className="text-xl md:text-2xl font-normal text-foreground/70 group-hover:text-foreground/90 transition-colors duration-500" style={{ fontFamily: "'Radley', 'Sawarabi Mincho', serif", color: "#494949" }}>
-                {title}
-              </h3>
-              <p className="mt-2 text-[13px] leading-relaxed max-w-lg line-clamp-2" style={{ color: "#666666" }}>
-                {excerpt}
-              </p>
+          <div className="flex items-center gap-4 md:gap-6">
+            <div className="flex-1 min-w-0 flex flex-col md:flex-row md:items-start md:justify-between gap-2">
+              <div className="flex-1 min-w-0">
+                <h3 className="text-xl md:text-2xl font-normal text-foreground/70 group-hover:text-foreground/90 transition-colors duration-500" style={{ fontFamily: "'Radley', 'Sawarabi Mincho', serif", color: "#494949" }}>
+                  {title}
+                </h3>
+                <p className="mt-2 text-[13px] leading-relaxed max-w-lg line-clamp-2" style={{ color: "#666666" }}>
+                  {excerpt}
+                </p>
+              </div>
+              <div className="flex items-center gap-4 shrink-0 md:mt-1">
+                <span className="text-[10px] tracking-[0.15em] uppercase" style={{ color: "#999999" }}>
+                  {post.category}
+                </span>
+                <span className="text-[14px] tabular-nums" style={{ color: "#666666" }}>
+                  {date}
+                </span>
+              </div>
             </div>
-            <div className="flex items-center gap-4 shrink-0 md:mt-1">
-              <span className="text-[10px] tracking-[0.15em] uppercase" style={{ color: "#999999" }}>
-                {post.category}
-              </span>
-              <span className="text-[14px] tabular-nums" style={{ color: "#666666" }}>
-                {date}
-              </span>
-            </div>
+            {thumbnail && (
+              <div className="shrink-0">
+                <img
+                  src={thumbnail + "?w=160&h=160&fit=crop&auto=format"}
+                  alt=""
+                  className="w-[60px] h-[60px] md:w-[80px] md:h-[80px] object-cover rounded-[50%_50%_50%_50%/40%_40%_60%_60%] opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                  loading="lazy"
+                  data-testid={`img-blog-thumbnail-${post._id}`}
+                />
+              </div>
+            )}
           </div>
         </article>
       </Link>

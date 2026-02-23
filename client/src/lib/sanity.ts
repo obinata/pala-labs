@@ -18,6 +18,7 @@ export interface SanityBlogPost {
   contentJa?: any[];
   category: string;
   imageUrl?: string;
+  featuredImageUrl?: string;
   publishedAt: string;
 }
 
@@ -40,6 +41,7 @@ export const blogPostQuery = `*[_type == "blogPost"] | order(publishedAt desc) {
   },
   category,
   "imageUrl": image.asset->url,
+  "featuredImageUrl": featuredImage.asset->url,
   publishedAt
 }`;
 
