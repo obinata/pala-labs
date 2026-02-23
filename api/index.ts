@@ -110,7 +110,7 @@ const distPath = path.resolve(__dirname, "../dist/public");
 
 app.use(express.static(distPath));
 
-app.get("*", async (req, res) => {
+app.get("/{*path}", async (req, res) => {
   const ua = req.headers["user-agent"];
   const blogMatch = req.path.match(/^\/blog\/([^/]+)$/);
 
