@@ -27,6 +27,14 @@ function AboutIntroSection() {
             <><strong>Sovereign Technology [ソブリンテクノロジー]</strong> — 使う人の主権を守るためにつくられたテクノロジー。オープンソースで、仕組みが透明で、誰でも検証できる。使い手が個人であれ、コミュニティであれ、国家であれ、寄り添うもの。Pala Labsはこの技術と文化、社会をつなぎ、このムーブメントの中から本当に価値あるものを選び、ツール、教育、コミュニティという形で発信します。</>
           )}
         </p>
+        <a
+          href="/initiatives"
+          className="inline-flex items-center gap-2 mt-6 text-sm text-foreground/50 hover:text-foreground/80 transition-colors duration-500"
+          data-testid="link-see-initiatives"
+        >
+          <span>{t("See our initiatives", "イニシアチブを見る")}</span>
+          <span className="text-xs">→</span>
+        </a>
       </div>
     </section>
   );
