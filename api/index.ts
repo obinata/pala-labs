@@ -1,8 +1,9 @@
-import type { Express } from "express";
-import { type Server } from "http";
+import express from "express";
 import fs from "fs";
 import path from "path";
-import { sanityServer, ogPostQuery, type OgPostData } from "./sanity";
+import { createClient } from "@sanity/client";
+
+const app = express();
 
 const CRAWLER_USER_AGENTS = [
   "facebookexternalhit",
@@ -30,6 +31,26 @@ function escapeHtml(str: string): string {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
 }
+
+const sanityServer = createClient({
+  projectId: process.env.VITE_SANITY_PROJECT_ID || "",
+  dataset: process.env.VITE_SANITY_DATASET || "production",
+  useCdn: true,
+  apiVersion: "2024-01-01",
+});
+
+interface OgPostData {
+  titleEn: string;
+  excerptEn: string;
+  imageUrl?: string;
+}
+
+const ogPostQuery = (slug: string) =>
+  `*[_type == "blogPost" && slug.current == "${slug}"][0] {
+  titleEn,
+  excerptEn,
+  "imageUrl": image.asset->url
+}`;
 
 function injectOgTags(html: string, post: OgPostData): string {
   const title = escapeHtml(post.titleEn) + " &mdash; Pala Labs";
@@ -81,41 +102,35 @@ function injectOgTags(html: string, post: OgPostData): string {
   return html;
 }
 
-function getHtmlPath(): string {
-  const isProd = process.env.NODE_ENV === "production";
-  if (isProd) {
-    return path.resolve(__dirname, "public", "index.html");
+const distPath = path.resolve(__dirname, "../dist/public");
+
+app.use(express.static(distPath));
+
+app.get("*", async (req, res) => {
+  const ua = req.headers["user-agent"];
+  const blogMatch = req.path.match(/^\/blog\/([^/]+)$/);
+
+  const htmlPath = path.resolve(distPath, "index.html");
+
+  if (!fs.existsSync(htmlPath)) {
+    return res.status(500).send("Build not found");
   }
-  return path.resolve(process.cwd(), "client", "index.html");
-}
 
-export async function registerRoutes(
-  httpServer: Server,
-  app: Express
-): Promise<Server> {
-  app.get("/blog/:slug", async (req, res, next) => {
-    const ua = req.headers["user-agent"];
+  let html = fs.readFileSync(htmlPath, "utf-8");
 
-    if (!isCrawler(ua)) {
-      return next();
-    }
-
+  if (isCrawler(ua) && blogMatch) {
+    const slug = blogMatch[1];
     try {
-      const { slug } = req.params;
       const post = await sanityServer.fetch<OgPostData | null>(ogPostQuery(slug));
-
-      if (!post) {
-        return next();
+      if (post) {
+        html = injectOgTags(html, post);
       }
-
-      let html = await fs.promises.readFile(getHtmlPath(), "utf-8");
-      html = injectOgTags(html, post);
-
-      res.status(200).set({ "Content-Type": "text/html" }).end(html);
     } catch (err) {
-      next(err);
+      console.error("Sanity fetch error:", err);
     }
-  });
+  }
 
-  return httpServer;
-}
+  res.status(200).set({ "Content-Type": "text/html" }).send(html);
+});
+
+export default app;

@@ -34,8 +34,18 @@ Corporate website for Pala Labs (palalabs.org) — a Curatorial Lab for Sovereig
 
 ## Server-Side OG Meta Injection
 - `server/sanity.ts`: Server-side Sanity client for fetching blog post metadata
-- `server/routes.ts`: `/blog/:slug` route intercepts before SPA catch-all, injects post-specific OG tags into HTML
+- `server/routes.ts`: `/blog/:slug` route with crawler detection (facebookexternalhit, Twitterbot, LinkedInBot, Slackbot, Discordbot, etc.)
+  - Crawlers receive HTML with injected post-specific OG tags (title, description, image)
+  - Non-crawlers pass through to SPA catch-all (index.html)
 - Enables correct link previews on Twitter, Facebook, Slack, etc.
+
+## Vercel Deployment
+- `vercel.json`: Routes all requests through Express serverless function at `/api`
+- `api/index.ts`: Vercel serverless function entry point — Express app with:
+  - Static file serving from `dist/public`
+  - Crawler detection + OG tag injection for `/blog/:slug`
+  - SPA catch-all for all other routes
+- Build: `npm run build` (Vite client + esbuild server)
 
 ## Sanity CMS
 - Blog posts managed via Sanity Studio
@@ -47,5 +57,6 @@ Corporate website for Pala Labs (palalabs.org) — a Curatorial Lab for Sovereig
 
 ## Recent Changes
 - 2026-02-23: Server-side OG meta injection for blog posts, SEO meta tags update, favicon update, html lang switching, animation refinements (3s fade-in), Initiatives archive links, nav label updates
+- 2026-02-23: Vercel deployment setup with serverless function (`api/index.ts`), crawler detection for OG injection, `vercel.json` routing config, SPA catch-all for all routes
 - 2026-02-21: Migrated blog from PostgreSQL to Sanity CMS, removed server-side blog API/DB
 - 2026-02-15: Initial build of complete site with all sections, bilingual support, animations, and blog backend
