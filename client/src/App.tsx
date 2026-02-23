@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { I18nProvider } from "@/lib/i18n";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
 import Home from "@/pages/Home";
 import PhilosophyPage from "@/pages/PhilosophyPage";
 import WorkPage from "@/pages/WorkPage";
@@ -33,6 +34,7 @@ function App() {
           <Toaster />
           <Router />
           <SpeedInsights />
+          <Analytics />
         </I18nProvider>
       </TooltipProvider>
     </QueryClientProvider>
