@@ -4,7 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { I18nProvider } from "@/lib/i18n";
-import { SpeedInsights } from "@vercel/speed-insights/react"; // ← 追加
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Home from "@/pages/Home";
 import PhilosophyPage from "@/pages/PhilosophyPage";
 import WorkPage from "@/pages/WorkPage";
@@ -32,7 +32,7 @@ function App() {
         <I18nProvider>
           <Toaster />
           <Router />
-          <SpeedInsights /> // ← 追加
+          <SpeedInsights />
         </I18nProvider>
       </TooltipProvider>
     </QueryClientProvider>
