@@ -10,14 +10,14 @@ const footerLinks = [
     icon: SiX,
   },
   {
-    label: "GitHub",
-    url: "https://github.com/Pala-Labs",
-    icon: SiGithub,
-  },
-  {
     label: "YouTube",
     url: "https://www.youtube.com/@PalaLabs",
     icon: SiYoutube,
+  },
+  {
+    label: "GitHub",
+    url: "https://github.com/Pala-Labs",
+    icon: SiGithub,
   },
   {
     label: "Events",
@@ -49,17 +49,27 @@ export function FooterSection({ compact = false }: { compact?: boolean }) {
                 <p className="text-[11px] tracking-[0.25em] uppercase text-foreground/60 mb-3">
                   PALA LABS
                 </p>
-                <p className="text-[13px] text-foreground/30 leading-relaxed max-w-xs">
-                  {t(
-                    "Sovereign Technology Lab for Sovereign Individuals.",
-                    "自律的な個人のためのソブリン・テクノロジー・ラボ。"
-                  )}
-                </p>
               </div>
 
-              <div className="flex flex-wrap items-start md:items-end gap-3">
-                <div className="flex flex-wrap items-center gap-4 md:gap-5">
-                  {footerLinks.map((link) => (
+              <div className="flex flex-col items-start md:items-end gap-2">
+                <div className="flex items-center gap-4 md:gap-5">
+                  {footerLinks.slice(0, 2).map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex items-center gap-1.5 text-[11px] tracking-[0.15em] uppercase text-foreground/50 underline underline-offset-4 decoration-foreground/15 hover:text-foreground/70 hover:decoration-foreground/30 transition-colors duration-500"
+                      data-testid={`link-footer-${link.label.toLowerCase().replace(/[\s\/@]/g, "-")}`}
+                    >
+                      {link.icon && <link.icon className="w-3 h-3" />}
+                      <span>{link.label}</span>
+                      <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </a>
+                  ))}
+                </div>
+                <div className="flex items-center gap-4 md:gap-5">
+                  {footerLinks.slice(2).map((link) => (
                     <a
                       key={link.label}
                       href={link.url}
