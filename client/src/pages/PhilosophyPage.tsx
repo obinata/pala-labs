@@ -20,7 +20,7 @@ function AboutIntroSection() {
           Pala Labs is a curator and guide for Sovereign Technology.
         </p>
         <p className="mt-8 md:mt-12 text-sm leading-[1.8]" style={{ color: "#666666" }}>
-          Sovereign Technology - technology designed to protect the autonomy of its users; open-source, verifiable, and built to serve whether for individuals, communities, and nations. We bridge this technology and culture - selecting what matters and delivering it to the world through tools, events, education, and community.
+          <strong>Sovereign Technology</strong> — technology designed to protect the autonomy of its users; open-source, verifiable, and built to serve whether for individuals, communities, or nations. We bridge technology and culture — selecting what matters in this movement and delivering it to the world through tools, education, and community.
         </p>
       </div>
     </section>
