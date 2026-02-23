@@ -38,6 +38,7 @@ const works = [
     tagEn: "Tool",
     tagJa: "ツール",
     link: "https://openshore.io/",
+    archive: null as string | null,
     image: null as string | null,
   },
   {
@@ -50,6 +51,7 @@ const works = [
     tagEn: "Education",
     tagJa: "教育",
     link: null as string | null,
+    archive: "https://www.youtube.com/playlist?list=PLgtNWWhTQLkOEdR-Co_ssraTka5_2qKtu",
     image: jamTourImg as string | null,
   },
   {
@@ -62,6 +64,7 @@ const works = [
     tagEn: "Education",
     tagJa: "教育",
     link: null as string | null,
+    archive: "https://www.youtube.com/playlist?list=PLwcnAOKMj-Ab7sDej2P4peqGxu2mTGYNy",
     image: grayPaperImg as string | null,
   },
 ];
@@ -69,7 +72,6 @@ const works = [
 const links = [
   { titleEn: "Safeguard Against Post-Truth Age", titleJa: "ポスト真実時代への防衛", descEn: "Short documentary", descJa: "ショートドキュメンタリー", url: "https://youtube.com/watch?si=s7TyA-dDdvasehmO&v=-GdWXtwvWtQ&feature=youtu.be" },
   { titleEn: "JAM Tour Recap", titleJa: "JAMツアー総集編", descEn: "Video recap", descJa: "動画まとめ", url: "https://www.youtube.com/watch?si=BYCWE_I5ENItRaZn&v=FgxNRMtcpCM&feature=youtu.be" },
-  { titleEn: "Tour Archive", titleJa: "ツアーアーカイブ", descEn: "Full playlist", descJa: "プレイリスト", url: "https://www.youtube.com/playlist?list=PLgtNWWhTQLkOEdR-Co_ssraTka5_2qKtu" },
   { titleEn: "Gray Paper Lectures", titleJa: "講義アーカイブ", descEn: "Lecture archive", descJa: "講義アーカイブ", url: "https://graypaper.com/lectures/?section=1.1-Nomenclature" },
   { titleEn: "ETHPrague — JAM", titleJa: "ETHPrague — JAM", descEn: "Conference talk", descJa: "カンファレンストーク", url: "https://www.forbes.com/sites/nimrodlehavi/2024/06/09/analyzing-vitalik-buterin-and-gavin-woods-ethprague-fireside-chat/" },
   { titleEn: "Gavin Wood: A Path For Human-Centric Technology", titleJa: "Gavin Wood: A Path For Human-Centric Technology", descEn: "Interview", descJa: "インタビュー", url: "https://www.youtube.com/watch?v=ltA-3snv0fw" },
@@ -151,18 +153,32 @@ export function InitiativesSection() {
                     <p className="mt-4 text-sm max-w-lg leading-[1.8]" style={{ color: "#666666" }}>
                       {lang === "en" ? item.descEn : item.descJa}
                     </p>
-                    {item.link && (
-                      <a
-                        href={item.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 mt-5 px-4 py-2 text-[12px] tracking-[0.1em] text-foreground/50 border border-foreground/10 rounded-full hover:text-foreground/80 hover:border-foreground/25 hover:bg-foreground/[0.02] transition-all duration-500"
-                        data-testid={`link-work-${i}`}
-                      >
-                        <span>{item.link.replace(/^https?:\/\//, "")}</span>
-                        <ArrowUpRight className="w-3 h-3" />
-                      </a>
-                    )}
+                    <div className="flex flex-wrap items-center gap-3 mt-5">
+                      {item.link && (
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-4 py-2 text-[12px] tracking-[0.1em] text-foreground/50 border border-foreground/10 rounded-full hover:text-foreground/80 hover:border-foreground/25 hover:bg-foreground/[0.02] transition-all duration-500"
+                          data-testid={`link-work-${i}`}
+                        >
+                          <span>{item.link.replace(/^https?:\/\//, "")}</span>
+                          <ArrowUpRight className="w-3 h-3" />
+                        </a>
+                      )}
+                      {item.archive && (
+                        <a
+                          href={item.archive}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-4 py-2 text-[12px] tracking-[0.1em] text-foreground/50 border border-foreground/10 rounded-full hover:text-foreground/80 hover:border-foreground/25 hover:bg-foreground/[0.02] transition-all duration-500"
+                          data-testid={`link-archive-work-${i}`}
+                        >
+                          <span>{t("Archive", "アーカイブ")}</span>
+                          <ArrowUpRight className="w-3 h-3" />
+                        </a>
+                      )}
+                    </div>
                   </div>
                   <div className="hidden md:flex flex-col items-end gap-4 shrink-0">
                     <span className="text-[10px] tracking-[0.2em] uppercase mt-2 w-24 text-right" style={{ color: "#666666" }}>
