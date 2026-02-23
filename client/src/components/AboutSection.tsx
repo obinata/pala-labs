@@ -56,7 +56,7 @@ export function AboutSection() {
             <Reveal delay={250}>
               <p className="mt-8 md:mt-12 text-sm leading-[1.8] max-w-lg" style={{ color: "#666666" }}>
                 {t(
-                  "Technology has never been neutral. It either serves those who build it or those who use it. We believe technology should be a tool that serves individuals. That vision carries a long lineage; from the hippies, the hackers, and the cypherpunks, to technologies like Bitcoin and the original promise of Web3. Pala Labs sees itself as part of that lineage.",
+                  "Technology has never been neutral. It can give its users more control, or quietly take it away. We believe technology should serve the people who use it - individuals, communities, and nations alike. That vision carries a long lineage; from the hippies, the hackers, and the cypherpunks, to Bitcoin and the original promise of Web3. Pala Labs sees itself as part of that lineage.",
                   "現代のテクノロジーは、常に誰かの利益のために動いています。それを運営する者か、利用する者か。私たちは、テクノロジーは個人のための道具であるべきだと信じています。本来、そのビジョンには長い系譜がありました。1960年代のヒッピーから、ハッカー、サイファーパンク、ビットコインの誕生とWeb3の本来の精神まで。Pala Labsは、その流れの先に存在しています。"
                 )}
               </p>
@@ -93,7 +93,7 @@ export function AboutSection() {
               <div className="text-sm leading-[1.8] max-w-lg ml-auto" style={{ color: "#666666" }}>
                 <p>
                   {t(
-                    "Pala takes its name from the fictional island in Aldous Huxley's final novel, Island (1962) — a world where human agency comes before technological progress. Not the dystopia of Brave New World, but its alternative: a community that chooses how it lives. That's the vision we're working towards.",
+                    "Pala takes its name from the fictional island in Aldous Huxley's final novel, Island (1962), which illustrated a vision where human agency comes before technological progress. Not the dystopia of Brave New World, where people trade freedom for comfort, but its alternative: a community that chooses how it lives.",
                     "Palaという名前は、オルダス・ハクスリーの最後の小説『島』（1962年）に登場する架空の島に由来します。西洋科学と東洋思想が調和し、テクノロジーの進歩よりも人間の主体性が優先される社会。それは彼のもう一つの名著『すばらしい新世界』が描いたディストピアへのアンチテーゼであり、ひとりひとりがテクノロジーを選び取り、自らの生き方をするビジョンです。それは私たちの目指す姿とも重なる、\"Self-Sovereign\"の本質だと考えます。"
                   )}
                 </p>
