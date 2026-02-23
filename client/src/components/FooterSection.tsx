@@ -57,11 +57,8 @@ export function FooterSection({ compact = false }: { compact?: boolean }) {
                 </p>
               </div>
 
-              <div className="flex flex-col items-start md:items-end gap-3">
-                <p className="text-[13px] text-foreground/30">
-                  contact [at] palalabs.org
-                </p>
-                <div className="flex items-center gap-5">
+              <div className="flex flex-wrap items-start md:items-end gap-3">
+                <div className="flex flex-wrap items-center gap-4 md:gap-5">
                   {footerLinks.map((link) => (
                     <a
                       key={link.label}
@@ -83,25 +80,20 @@ export function FooterSection({ compact = false }: { compact?: boolean }) {
 
           {compact && (
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <div className="flex items-center gap-4">
-                <p className="text-[11px] text-foreground/25">
-                  contact [at] palalabs.org
-                </p>
-                <div className="flex items-center gap-4">
-                  {footerLinks.map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-1 text-[10px] tracking-[0.15em] uppercase text-foreground/25 hover:text-foreground/50 transition-colors duration-500"
-                      data-testid={`link-footer-${link.label.toLowerCase().replace(/[\s\/@]/g, "-")}`}
-                    >
-                      {link.icon && <link.icon className="w-2.5 h-2.5" />}
-                      <span>{link.label}</span>
-                    </a>
-                  ))}
-                </div>
+              <div className="flex flex-wrap items-center gap-4">
+                {footerLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-1 text-[10px] tracking-[0.15em] uppercase text-foreground/25 hover:text-foreground/50 transition-colors duration-500"
+                    data-testid={`link-footer-${link.label.toLowerCase().replace(/[\s\/@]/g, "-")}`}
+                  >
+                    {link.icon && <link.icon className="w-2.5 h-2.5" />}
+                    <span>{link.label}</span>
+                  </a>
+                ))}
               </div>
               <p className="text-[10px] tracking-[0.15em] uppercase text-foreground/15">
                 &copy; {new Date().getFullYear()} Pala Labs
