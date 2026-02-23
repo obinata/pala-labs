@@ -10,12 +10,12 @@ export const sanityServer = createClient({
 export interface OgPostData {
   titleEn: string;
   excerptEn: string;
-  imageUrl?: string;
+  ogImage?: string;
 }
 
 export const ogPostQuery = (slug: string) =>
   `*[_type == "blogPost" && slug.current == "${slug}"][0] {
   titleEn,
   excerptEn,
-  "imageUrl": image.asset->url
+  "ogImage": featuredImage.asset->url
 }`;

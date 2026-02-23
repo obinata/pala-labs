@@ -46,22 +46,23 @@ const sanityServer = createClient({
 interface OgPostData {
   titleEn: string;
   excerptEn: string;
-  imageUrl?: string;
+  ogImage?: string;
 }
 
 const ogPostQuery = (slug: string) =>
   `*[_type == "blogPost" && slug.current == "${slug}"][0] {
   titleEn,
   excerptEn,
-  "imageUrl": image.asset->url
+  "ogImage": featuredImage.asset->url
 }`;
 
-function injectOgTags(html: string, post: OgPostData): string {
-  const title = escapeHtml(post.titleEn) + " &mdash; Pala Labs";
+function injectOgTags(html: string, post: OgPostData, requestPath: string): string {
+  const title = escapeHtml(post.titleEn) + " — Pala Labs";
   const description = escapeHtml(post.excerptEn || "");
-  const imageUrl = post.imageUrl
-    ? escapeHtml(post.imageUrl)
+  const ogImage = post.ogImage
+    ? escapeHtml(post.ogImage)
     : "https://palalabs.org/og-default.png";
+  const ogUrl = "https://palalabs.org" + requestPath;
 
   html = html.replace(
     /<title>[^<]*<\/title>/,
@@ -84,6 +85,11 @@ function injectOgTags(html: string, post: OgPostData): string {
   );
 
   html = html.replace(
+    /<meta property="og:url" content="[^"]*"\s*\/?>/,
+    `<meta property="og:url" content="${ogUrl}" />`
+  );
+
+  html = html.replace(
     /<meta name="twitter:title" content="[^"]*"\s*\/?>/,
     `<meta name="twitter:title" content="${title}" />`
   );
@@ -95,12 +101,12 @@ function injectOgTags(html: string, post: OgPostData): string {
 
   html = html.replace(
     /<meta property="og:image" content="[^"]*"\s*\/?>/,
-    `<meta property="og:image" content="${imageUrl}" />`
+    `<meta property="og:image" content="${ogImage}" />`
   );
 
   html = html.replace(
     /<meta name="twitter:image" content="[^"]*"\s*\/?>/,
-    `<meta name="twitter:image" content="${imageUrl}" />`
+    `<meta name="twitter:image" content="${ogImage}" />`
   );
 
   return html;
@@ -127,7 +133,7 @@ app.get("/{*path}", async (req, res) => {
     try {
       const post = await sanityServer.fetch<OgPostData | null>(ogPostQuery(slug));
       if (post) {
-        html = injectOgTags(html, post);
+        html = injectOgTags(html, post, req.path);
       }
     } catch (err) {
       console.error("Sanity fetch error:", err);

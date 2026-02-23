@@ -31,12 +31,13 @@ function escapeHtml(str: string): string {
     .replace(/>/g, "&gt;");
 }
 
-function injectOgTags(html: string, post: OgPostData): string {
-  const title = escapeHtml(post.titleEn) + " &mdash; Pala Labs";
+function injectOgTags(html: string, post: OgPostData, requestPath: string): string {
+  const title = escapeHtml(post.titleEn) + " — Pala Labs";
   const description = escapeHtml(post.excerptEn || "");
-  const imageUrl = post.imageUrl
-    ? escapeHtml(post.imageUrl)
+  const ogImage = post.ogImage
+    ? escapeHtml(post.ogImage)
     : "https://palalabs.org/og-default.png";
+  const ogUrl = "https://palalabs.org" + requestPath;
 
   html = html.replace(
     /<title>[^<]*<\/title>/,
@@ -59,6 +60,11 @@ function injectOgTags(html: string, post: OgPostData): string {
   );
 
   html = html.replace(
+    /<meta property="og:url" content="[^"]*"\s*\/?>/,
+    `<meta property="og:url" content="${ogUrl}" />`
+  );
+
+  html = html.replace(
     /<meta name="twitter:title" content="[^"]*"\s*\/?>/,
     `<meta name="twitter:title" content="${title}" />`
   );
@@ -70,12 +76,12 @@ function injectOgTags(html: string, post: OgPostData): string {
 
   html = html.replace(
     /<meta property="og:image" content="[^"]*"\s*\/?>/,
-    `<meta property="og:image" content="${imageUrl}" />`
+    `<meta property="og:image" content="${ogImage}" />`
   );
 
   html = html.replace(
     /<meta name="twitter:image" content="[^"]*"\s*\/?>/,
-    `<meta name="twitter:image" content="${imageUrl}" />`
+    `<meta name="twitter:image" content="${ogImage}" />`
   );
 
   return html;
@@ -109,7 +115,7 @@ export async function registerRoutes(
       }
 
       let html = await fs.promises.readFile(getHtmlPath(), "utf-8");
-      html = injectOgTags(html, post);
+      html = injectOgTags(html, post, req.path);
 
       res.status(200).set({ "Content-Type": "text/html" }).end(html);
     } catch (err) {
