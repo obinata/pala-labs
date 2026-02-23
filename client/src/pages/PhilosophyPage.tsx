@@ -33,7 +33,7 @@ function AboutIntroSection() {
           data-testid="link-see-initiatives"
         >
           <span>{t("See our initiatives", "イニシアチブを見る")}</span>
-          <span className="text-xs">→</span>
+          <ArrowUpRight className="w-3 h-3" />
         </a>
       </div>
     </section>
