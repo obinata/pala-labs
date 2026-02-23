@@ -73,7 +73,7 @@ const links = [
   { titleEn: "Safeguard Against Post-Truth Age", titleJa: "ポスト真実時代への防衛", descEn: "Short documentary", descJa: "ショートドキュメンタリー", url: "https://youtube.com/watch?si=s7TyA-dDdvasehmO&v=-GdWXtwvWtQ&feature=youtu.be" },
   { titleEn: "JAM Tour Recap", titleJa: "JAMツアー総集編", descEn: "Video recap", descJa: "動画まとめ", url: "https://www.youtube.com/watch?si=BYCWE_I5ENItRaZn&v=FgxNRMtcpCM&feature=youtu.be" },
   { titleEn: "Gray Paper Lectures", titleJa: "講義アーカイブ", descEn: "Lecture archive", descJa: "講義アーカイブ", url: "https://graypaper.com/lectures/?section=1.1-Nomenclature" },
-  { titleEn: "ETHPrague — JAM", titleJa: "ETHPrague — JAM", descEn: "Conference talk", descJa: "カンファレンストーク", url: "https://www.forbes.com/sites/nimrodlehavi/2024/06/09/analyzing-vitalik-buterin-and-gavin-woods-ethprague-fireside-chat/" },
+  { titleEn: "ETHPrague — JAM", titleJa: "ETHPrague — JAM", descEn: "Article", descJa: "記事", url: "https://www.forbes.com/sites/nimrodlehavi/2024/06/09/analyzing-vitalik-buterin-and-gavin-woods-ethprague-fireside-chat/" },
   { titleEn: "Gavin Wood: A Path For Human-Centric Technology", titleJa: "Gavin Wood: A Path For Human-Centric Technology", descEn: "Interview", descJa: "インタビュー", url: "https://www.youtube.com/watch?v=ltA-3snv0fw" },
 ];
 
@@ -98,7 +98,7 @@ export function InitiativesSection() {
 
         <Reveal>
           <p className="text-[11px] tracking-[0.3em] uppercase mb-8 md:mb-10" style={{ color: "#666666" }}>
-            {t("Library", "ライブラリ")}
+            {t("Past Work Library", "過去の作品ライブラリ")}
           </p>
         </Reveal>
 
