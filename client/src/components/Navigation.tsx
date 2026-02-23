@@ -17,7 +17,7 @@ export function Navigation() {
   const navLinks = [
     { href: "/philosophy", label: t("About", "概要・哲学") },
     { href: "/work", label: t("Initiatives", "イニシアチブ") },
-    { href: "/blog", label: t("Blog", "文") },
+    { href: "/blog", label: t("Blog", "ブログ") },
   ];
 
   return (
