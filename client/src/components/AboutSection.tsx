@@ -33,7 +33,7 @@ export function AboutSection() {
     <section
       id="philosophy"
       data-testid="section-about"
-      className="relative py-20 md:py-40"
+      className="relative pt-10 md:pt-20 pb-20 md:pb-40"
     >
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         <Reveal>
