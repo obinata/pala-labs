@@ -38,7 +38,7 @@ export function FooterSection({ compact = false }: { compact?: boolean }) {
     >
       <div
         ref={ref}
-        className={`relative max-w-7xl mx-auto px-6 md:px-12 transition-all duration-[1s] ease-out ${
+        className={`relative max-w-7xl mx-auto px-6 md:px-12 transition-all duration-[2.5s] ease-out ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
