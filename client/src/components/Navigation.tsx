@@ -33,13 +33,13 @@ export function Navigation() {
         <div className="flex items-center justify-between h-14">
           <Link
             href="/"
-            className="block self-end pb-[7px]"
+            className="block self-end pb-[22px] md:pb-[7px]"
             data-testid="link-home"
           >
             <img
               src={logoImg}
               alt="PALA LABS"
-              className="h-6 w-auto"
+              className="h-7 md:h-7 w-auto"
               style={{ opacity: 0.8 }}
             />
           </Link>
