@@ -2,6 +2,7 @@ import { PageLayout } from "@/components/PageLayout";
 import { AboutSection } from "@/components/AboutSection";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 import { useLang } from "@/lib/i18n";
+import { ArrowUpRight } from "lucide-react";
 
 function AboutIntroSection() {
   const { ref, isVisible } = useScrollReveal(0.1);
@@ -33,7 +34,6 @@ function AboutIntroSection() {
           data-testid="link-see-initiatives"
         >
           <span>{t("See our initiatives", "イニシアチブを見る")}</span>
-          <ArrowUpRight className="w-3 h-3" />
         </a>
       </div>
     </section>
