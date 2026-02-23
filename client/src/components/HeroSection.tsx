@@ -19,7 +19,7 @@ export function HeroSection() {
       <div className="absolute inset-0 flex justify-end pointer-events-none">
         <div className="max-w-7xl w-full mx-auto px-6 md:px-12 relative h-full">
           <div
-            className={`absolute right-6 md:right-12 bottom-[35%] sm:bottom-[15%] md:bottom-[10%] w-[50%] sm:w-[60%] md:w-[40%] h-[35%] sm:h-[45%] md:h-[65%] transition-opacity duration-[3s] ease-out ${
+            className={`absolute right-2 md:right-12 bottom-[35%] sm:bottom-[15%] md:bottom-[10%] w-[50%] sm:w-[60%] md:w-[40%] h-[35%] sm:h-[45%] md:h-[65%] transition-opacity duration-[3s] ease-out ${
               mounted ? "opacity-100" : "opacity-0"
             }`}
           >
