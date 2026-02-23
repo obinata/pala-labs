@@ -93,8 +93,8 @@ export function AboutSection() {
               <div className="text-sm leading-[1.8] max-w-lg ml-auto" style={{ color: "#666666" }}>
                 <p>
                   {t(
-                    "Pala takes its name from the fictional island in Aldous Huxley's final novel, Island (1962), which illustrated a vision where human agency comes before technological progress. Not the dystopia of Brave New World, where people trade freedom for comfort, but its alternative: a community that chooses how it lives.",
-                    "Palaという名前は、オルダス・ハクスリーの最後の小説『島』（1962年）に登場する架空の島に由来します。そこにあるのは、西洋科学と東洋思想が調和し、テクノロジーの進歩よりも人間の主体性が優先される社会。それは彼のもう一つの著作『Brave New World (すばらしい新世界)』が描いた「人々が快適さと引き換えに自由を手放す世界」へのアンチテーゼであり、人間自身が手にする道具を取捨選択し、自らの生き方をするビジョン。自らの主権を自らの手で守る。その本質こそ、Pala Labsの原点です。"
+                    <>Pala takes its name from the fictional island in Aldous Huxley's final novel, <em>Island</em> (1962), which illustrated a vision where human agency comes before technological progress. Not the dystopia of <em>Brave New World</em>, where people trade freedom for comfort, but its alternative: a community that chooses how it lives.</>,
+                    <>Palaという名前は、オルダス・ハクスリーの最後の小説『島』（1962年）に登場する架空の島に由来します。そこにあるのは、西洋科学と東洋思想が調和し、テクノロジーの進歩よりも人間の主体性が優先される社会。それは彼のもう一つの著作『<em>Brave New World</em> (すばらしい新世界)』が描いた「人々が快適さと引き換えに自由を手放す世界」へのアンチテーゼであり、人間自身が手にする道具を取捨選択し、自らの生き方をするビジョン。自らの主権を自らの手で守る。その本質こそ、Pala Labsの原点です。</>
                   )}
                 </p>
               </div>
