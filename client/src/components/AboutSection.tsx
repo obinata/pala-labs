@@ -57,7 +57,7 @@ export function AboutSection() {
               <p className="mt-8 md:mt-12 text-sm leading-[1.8] max-w-lg" style={{ color: "#666666" }}>
                 {t(
                   "Technology has never been neutral. It can give its users more control, or quietly take it away. We believe technology should serve the people who use it. That vision carries a long lineage; from the hippies, the hackers, and the cypherpunks, to Bitcoin and the original promise of Web3. Pala Labs sees itself as part of that lineage.",
-                  "現代のテクノロジーは、常に誰かの利益のために動いています。利用する者により大きな主導権を与えることもあれば、利便性の名のもと静かにそれを奪うこともあります。私たちは、テクノロジーはそれを使う人のために仕えるべきものだと信じています。本来、そのビジョンには長い系譜がありました。1960年代のヒッピー、ハッカー、サイファーパンク、ビットコインの誕生、そしてWeb3の本来の精神。Pala Labsは、その流れの先に存在しています。"
+                  "現代のテクノロジーは、常に誰かの利益のために動いています。利用する者により大きな主導権を与えることもあれば、利便性の名のもと静かにそれを奪うこともあります。私たちは、テクノロジーはそれを使う人のために仕えるべきものだと信じています。本来、そのビジョンには長い系譜がありました。1960年代のヒッピー、ハッカー、サイファーパンク、ビットコインの誕生、そしてWeb3の本来の精神。Pala Labsは、その流れの延長線上に存在しています。"
                 )}
               </p>
             </Reveal>
