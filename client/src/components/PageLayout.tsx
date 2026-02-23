@@ -47,8 +47,8 @@ export function PageLayout({
   }, []);
 
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
-      <div className="fixed inset-0 pointer-events-none z-[0] ambient-glow" ref={glowRef} />
+    <div className="min-h-screen bg-background relative" style={{ overflow: "clip" }}>
+      <div className="fixed inset-[-80px] pointer-events-none z-[0] ambient-glow" ref={glowRef} />
       <div className="fixed inset-0 pointer-events-none grain-overlay z-[1]" />
       <div className="relative z-[2]">
         <Navigation />
