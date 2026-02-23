@@ -18,7 +18,7 @@ function Reveal({
     <div
       ref={ref}
       className={`transition-all duration-[1s] ease-out ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        isVisible ? "opacity-100" : "opacity-0"
       } ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >

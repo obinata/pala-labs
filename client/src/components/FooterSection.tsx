@@ -39,7 +39,7 @@ export function FooterSection({ compact = false }: { compact?: boolean }) {
       <div
         ref={ref}
         className={`relative max-w-7xl mx-auto px-6 md:px-12 transition-all duration-[1s] ease-out ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
         <div className={`border-t border-foreground/[0.06] ${compact ? "pt-4" : "pt-6"}`}>
