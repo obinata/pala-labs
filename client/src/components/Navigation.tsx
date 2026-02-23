@@ -61,7 +61,7 @@ export function Navigation() {
             ))}
             <button
               onClick={toggleLang}
-              className="text-[11px] tracking-[0.15em] uppercase border border-foreground/15 rounded-full px-3 py-1 text-foreground/40 transition-all duration-500 hover:text-foreground/80 hover:border-foreground/30"
+              className="text-[11px] tracking-[0.15em] uppercase rounded-full px-3 py-1 bg-foreground/70 text-background transition-all duration-500 hover:bg-foreground/90"
               data-testid="button-lang-toggle"
             >
               {lang === "en" ? "JP" : "EN"}
@@ -73,7 +73,7 @@ export function Navigation() {
           <div className="flex items-center">
             <button
               onClick={toggleLang}
-              className="text-[11px] tracking-[0.15em] uppercase border border-foreground/15 rounded-full px-3 py-1 text-foreground/40"
+              className="text-[11px] tracking-[0.15em] uppercase rounded-full px-3 py-1 bg-foreground/70 text-background transition-all duration-500 hover:bg-foreground/90"
               data-testid="button-lang-toggle-mobile"
             >
               {lang === "en" ? "JP" : "EN"}
