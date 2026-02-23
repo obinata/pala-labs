@@ -1,7 +1,7 @@
 import { useLang } from "@/lib/i18n";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 import { ArrowUpRight } from "lucide-react";
-import { SiX, SiGithub } from "react-icons/si";
+import { SiX, SiGithub, SiYoutube } from "react-icons/si";
 
 const footerLinks = [
   {
@@ -11,8 +11,13 @@ const footerLinks = [
   },
   {
     label: "GitHub",
-    url: "https://github.com/palalabs",
+    url: "https://github.com/Pala-Labs",
     icon: SiGithub,
+  },
+  {
+    label: "YouTube",
+    url: "https://www.youtube.com/@PalaLabs",
+    icon: SiYoutube,
   },
   {
     label: "Events",
