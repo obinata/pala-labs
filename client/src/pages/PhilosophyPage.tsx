@@ -6,7 +6,7 @@ function AboutIntroSection() {
   const { ref, isVisible } = useScrollReveal(0.1);
 
   return (
-    <section className="relative py-20 md:py-40">
+    <section className="relative py-20 md:py-40 pb-6 md:pb-10">
       <div
         ref={ref}
         className={`relative max-w-7xl mx-auto px-6 md:px-12 transition-all duration-[1s] ease-out ${
