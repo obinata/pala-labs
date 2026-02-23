@@ -49,8 +49,12 @@ function injectOgTags(html: string, post: OgPostData): string {
   if (post.imageUrl) {
     const imageUrl = escapeHtml(post.imageUrl);
     html = html.replace(
-      /<!--\s*<meta property="og:image"[^>]*>\s*-->/,
+      /<meta property="og:image" content="[^"]*"\s*\/?>/,
       `<meta property="og:image" content="${imageUrl}" />`
+    );
+    html = html.replace(
+      /<meta name="twitter:image" content="[^"]*"\s*\/?>/,
+      `<meta name="twitter:image" content="${imageUrl}" />`
     );
   }
 
