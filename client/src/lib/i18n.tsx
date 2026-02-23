@@ -5,7 +5,7 @@ type Lang = "en" | "ja";
 interface I18nContextType {
   lang: Lang;
   toggleLang: () => void;
-  t: (en: string, ja: string) => string;
+  t: <T extends ReactNode>(en: T, ja: T) => T;
 }
 
 const I18nContext = createContext<I18nContextType | null>(null);
@@ -25,7 +25,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const t = useCallback(
-    (en: string, ja: string) => (lang === "en" ? en : ja),
+    <T extends ReactNode>(en: T, ja: T): T => (lang === "en" ? en : ja),
     [lang]
   );
 

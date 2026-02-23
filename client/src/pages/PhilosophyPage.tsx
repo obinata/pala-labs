@@ -1,9 +1,11 @@
 import { PageLayout } from "@/components/PageLayout";
 import { AboutSection } from "@/components/AboutSection";
 import { useScrollReveal } from "@/lib/useScrollReveal";
+import { useLang } from "@/lib/i18n";
 
 function AboutIntroSection() {
   const { ref, isVisible } = useScrollReveal(0.1);
+  const { t } = useLang();
 
   return (
     <section className="relative pt-20 md:pt-40 pb-0">
@@ -14,13 +16,19 @@ function AboutIntroSection() {
         }`}
       >
         <p className="text-[11px] tracking-[0.3em] uppercase mb-10 md:mb-16" style={{ color: "#666666" }}>
-          About
+          {t("About", "概要・哲学")}
         </p>
         <p className="text-2xl md:text-3xl font-normal leading-[1.4]" style={{ fontFamily: "'Radley', 'Sawarabi Mincho', serif", color: "#494949" }}>
-          Pala Labs is a curator and guide for Sovereign Technology.
+          {t(
+            "Pala Labs is a curator and guide for Sovereign Technology.",
+            "Pala Labsは、Sovereign Technologyのキュレーターであり、ガイドです。"
+          )}
         </p>
         <p className="mt-8 md:mt-12 text-sm leading-[1.8]" style={{ color: "#666666" }}>
-          <strong>Sovereign Technology</strong> — technology designed to protect the autonomy of its users; open-source, verifiable, and built to serve whether for individuals, communities, or nations. We bridge technology and culture — selecting what matters in this movement and delivering it to the world through tools, education, and community.
+          {t(
+            <><strong>Sovereign Technology</strong> — technology designed to protect the autonomy of its users; open-source, verifiable, and built to serve whether for individuals, communities, or nations. We bridge technology and culture — selecting what matters in this movement and delivering it to the world through tools, education, and community.</>,
+            <><strong>Sovereign Technology [ソブリンテクノロジー]</strong> — 使う人の主権を守るためにつくられたテクノロジー。オープンソースで、仕組みが透明で、誰でも検証できる。使い手が個人であれ、コミュニティであれ、国家であれ、寄り添うもの。Pala Labsはこの技術と文化、社会をつなぎ、このムーブメントの中から本当に価値あるものを選び、ツール、教育、コミュニティという形で発信します。</>
+          )}
         </p>
       </div>
     </section>
