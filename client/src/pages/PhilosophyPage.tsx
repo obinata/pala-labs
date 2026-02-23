@@ -25,7 +25,7 @@ function AboutIntroSection() {
         <p className="mt-8 md:mt-12 text-sm leading-[1.8]" style={{ color: "#666666" }}>
           {t(
             <><strong>Sovereign Technology</strong> — technology designed to protect the autonomy of its users; open-source, verifiable, and built to serve whether for individuals, communities, or nations. We bridge technology and culture — selecting what matters in this movement and delivering it to the world through tools, education, and community.</>,
-            <><strong>Sovereign Technology [ソブリンテクノロジー]</strong> — 使う人の自由や主権を守るための技術。オープンソースで、仕組みが透明で、誰でも検証できる。使い手が個人であれ、コミュニティであれ、国家であれ、寄り添うもの。<br /><br /><strong>Pala Labs [パララボ]</strong> はこの技術と文化、社会をつなぎ、このムーブメントの中から本当に価値あるものを選び、ツール、教育、コミュニティという形で発信します。</>
+            <><strong>Sovereign Technology [ソブリンテクノロジー]</strong> — 使う人の自由や主権を守るための技術。オープンソースで、仕組みが透明で、誰でも検証できる。使い手が個人であれ、コミュニティであれ、国家であれ、寄り添うもの。<br /><br /><strong>Pala Labs [パララボ]</strong> は、このような技術を概念化し、世界にとって価値あるものを取捨選択した上で、ツール、教育、コミュニティといった形で文化と社会に接続します。</>
           )}
         </p>
         <a
