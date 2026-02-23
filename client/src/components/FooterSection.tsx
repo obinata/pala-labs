@@ -44,9 +44,9 @@ export function FooterSection({ compact = false }: { compact?: boolean }) {
       >
         <div className={`border-t border-foreground/[0.06] ${compact ? "pt-4" : "pt-6"}`}>
           {!compact && (
-            <div className="flex flex-col md:flex-row md:justify-between gap-8 mb-8">
+            <div className="flex flex-col md:flex-row md:justify-between gap-4 md:gap-8 mb-8">
               <div>
-                <p className="text-[11px] tracking-[0.25em] uppercase text-foreground/60 mb-3">
+                <p className="text-[11px] tracking-[0.25em] uppercase text-foreground/60 mb-0 md:mb-3">
                   PALA LABS
                 </p>
               </div>
