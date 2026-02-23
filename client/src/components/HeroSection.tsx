@@ -31,7 +31,7 @@ export function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
         <div
           className={`transition-all duration-[1.2s] ease-out ${
-            mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+            mounted ? "opacity-100" : "opacity-0"
           }`}
         >
           <h1 className="text-[clamp(1.5rem,3.5vw,3rem)] font-normal leading-[1.1] tracking-[-0.01em] text-foreground max-w-2xl" style={{ fontFamily: "'Radley', 'Sawarabi Mincho', serif", color: "#494949", whiteSpace: "pre-line" }}>
@@ -44,7 +44,7 @@ export function HeroSection() {
 
         <div
           className={`mt-8 transition-all duration-[1.2s] delay-300 ease-out ${
-            mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            mounted ? "opacity-100" : "opacity-0"
           }`}
         >
           <p className="text-sm max-w-md leading-relaxed" style={{ color: "#666666", whiteSpace: "pre-line" }}>
