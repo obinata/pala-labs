@@ -53,7 +53,7 @@ export function HeroSection() {
         >
           <p className="text-sm max-w-md leading-relaxed" style={{ color: "#666666", whiteSpace: "pre-line" }}>
             {t(
-              "Research, advocacy, and community lab for a self-sovereign future.",
+              "A lab advancing self-sovereignty through research, advocacy, and community.",
               "研究・発信・コミュニティを通じて、自律した未来を追求する"
             )}
           </p>
