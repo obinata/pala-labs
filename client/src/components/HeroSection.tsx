@@ -30,7 +30,7 @@ export function HeroSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
         <div
-          className={`transition-all duration-[1.2s] ease-out ${
+          className={`transition-all duration-[2.5s] ease-out ${
             mounted ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -43,7 +43,7 @@ export function HeroSection() {
         </div>
 
         <div
-          className={`mt-8 transition-all duration-[1.2s] delay-300 ease-out ${
+          className={`mt-8 transition-all duration-[2.5s] delay-500 ease-out ${
             mounted ? "opacity-100" : "opacity-0"
           }`}
         >
