@@ -174,7 +174,7 @@ export function InitiativesSection() {
                           className="inline-flex items-center gap-2 px-4 py-2 text-[12px] tracking-[0.1em] text-foreground/50 border border-foreground/10 rounded-full hover:text-foreground/80 hover:border-foreground/25 hover:bg-foreground/[0.02] transition-all duration-500"
                           data-testid={`link-archive-work-${i}`}
                         >
-                          <span>{t("Archive", "アーカイブ")}</span>
+                          <span>{t("Video Archive", "動画アーカイブ")}</span>
                           <ArrowUpRight className="w-3 h-3" />
                         </a>
                       )}
