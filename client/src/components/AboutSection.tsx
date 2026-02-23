@@ -38,7 +38,7 @@ export function AboutSection() {
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         <Reveal>
           <p className="text-[11px] tracking-[0.3em] uppercase mb-10 md:mb-16" style={{ color: "#666666" }}>
-            {t("Philosophy", "思想")}
+            Philosophy
           </p>
         </Reveal>
 

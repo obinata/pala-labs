@@ -16,13 +16,10 @@ function AboutIntroSection() {
         }`}
       >
         <p className="text-[11px] tracking-[0.3em] uppercase mb-10 md:mb-16" style={{ color: "#666666" }}>
-          {t("About", "概要・哲学")}
+          About
         </p>
         <p className="text-2xl md:text-3xl font-normal leading-[1.4]" style={{ fontFamily: "'Radley', 'Sawarabi Mincho', serif", color: "#494949" }}>
-          {t(
-            "Pala Labs is a curator and guide for Sovereign Technology.",
-            "Pala Labsは、Sovereign Technologyのキュレーターであり、ガイドです。"
-          )}
+          Pala Labs is a curator and guide for Sovereign Technology.
         </p>
         <p className="mt-8 md:mt-12 text-sm leading-[1.8]" style={{ color: "#666666" }}>
           {t(
