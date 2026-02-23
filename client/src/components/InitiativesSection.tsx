@@ -70,8 +70,8 @@ const links = [
   { titleEn: "Safeguard Against Post-Truth Age", titleJa: "ポスト真実時代への防衛", descEn: "Short documentary", descJa: "ショートドキュメンタリー", url: "https://youtube.com/watch?si=s7TyA-dDdvasehmO&v=-GdWXtwvWtQ&feature=youtu.be" },
   { titleEn: "JAM Tour Recap", titleJa: "JAMツアー総集編", descEn: "Video recap", descJa: "動画まとめ", url: "https://www.youtube.com/watch?si=BYCWE_I5ENItRaZn&v=FgxNRMtcpCM&feature=youtu.be" },
   { titleEn: "Gray Paper Lectures", titleJa: "講義アーカイブ", descEn: "Lecture archive", descJa: "講義アーカイブ", url: "https://graypaper.com/lectures/?section=1.1-Nomenclature" },
-  { titleEn: "ETHPrague — JAM", titleJa: "ETHPrague — JAM", descEn: "Conference talk", descJa: "カンファレンストーク", url: "https://live.ethprague.com/ethprague/watch?session=665833c8036a981493b0bf19" },
-  { titleEn: "Event Calendar", titleJa: "イベントカレンダー", descEn: "Upcoming events", descJa: "今後のイベント", url: "https://lu.ma/pala_labs" },
+  { titleEn: "ETHPrague — JAM", titleJa: "ETHPrague — JAM", descEn: "Conference talk", descJa: "カンファレンストーク", url: "https://www.forbes.com/sites/nimrodlehavi/2024/06/09/analyzing-vitalik-buterin-and-gavin-woods-ethprague-fireside-chat/" },
+  { titleEn: "Gavin Wood: A Path For Human-Centric Technology", titleJa: "Gavin Wood: A Path For Human-Centric Technology", descEn: "Interview", descJa: "インタビュー", url: "https://www.youtube.com/watch?v=ltA-3snv0fw" },
 ];
 
 export function InitiativesSection() {
@@ -121,7 +121,6 @@ export function InitiativesSection() {
                     </p>
                   </div>
                 </div>
-                <ArrowUpRight className="w-3.5 h-3.5 text-foreground/20 group-hover:text-foreground/50 transition-all duration-500 shrink-0 ml-4" />
               </a>
             ))}
             <div className="border-t border-foreground/[0.06]" />
