@@ -28,7 +28,7 @@ function AboutIntroSection() {
           )}
         </p>
         <a
-          href="/initiatives"
+          href="/work"
           className="inline-flex items-center gap-2 mt-6 text-sm text-foreground/50 hover:text-foreground/80 transition-colors duration-500"
           data-testid="link-see-initiatives"
         >
