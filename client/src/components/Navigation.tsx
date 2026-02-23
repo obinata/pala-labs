@@ -33,7 +33,7 @@ export function Navigation() {
         <div className="flex items-center justify-between h-14">
           <Link
             href="/"
-            className="block"
+            className="block self-end pb-[7px]"
             data-testid="link-home"
           >
             <img

@@ -65,7 +65,7 @@ export function FooterSection({ compact = false }: { compact?: boolean }) {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-1.5 text-[11px] tracking-[0.15em] uppercase text-foreground/30 underline underline-offset-4 decoration-foreground/10 hover:text-foreground/60 hover:decoration-foreground/25 transition-colors duration-500"
+                      className="group inline-flex items-center gap-1.5 text-[11px] tracking-[0.15em] uppercase text-foreground/50 underline underline-offset-4 decoration-foreground/15 hover:text-foreground/70 hover:decoration-foreground/30 transition-colors duration-500"
                       data-testid={`link-footer-${link.label.toLowerCase().replace(/[\s\/@]/g, "-")}`}
                     >
                       {link.icon && <link.icon className="w-3 h-3" />}
