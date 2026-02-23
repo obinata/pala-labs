@@ -30,21 +30,21 @@ export function Navigation() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="flex items-center justify-between h-14">
+        <div className="hidden md:flex items-center justify-between h-14">
           <Link
             href="/"
-            className="block self-end pb-[22px] md:pb-[7px]"
+            className="block self-end pb-[7px]"
             data-testid="link-home"
           >
             <img
               src={logoImg}
               alt="PALA LABS"
-              className="h-7 md:h-7 w-auto"
+              className="h-7 w-auto"
               style={{ opacity: 0.8 }}
             />
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -67,8 +67,10 @@ export function Navigation() {
               {lang === "en" ? "JP" : "EN"}
             </button>
           </div>
+        </div>
 
-          <div className="flex md:hidden items-center">
+        <div className="flex md:hidden items-center justify-between h-12">
+          <div className="flex items-center">
             <button
               onClick={toggleLang}
               className="text-[11px] tracking-[0.15em] uppercase border border-foreground/15 rounded-full px-3 py-1 text-foreground/40"
@@ -81,21 +83,35 @@ export function Navigation() {
       </div>
 
       <div className="md:hidden">
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-end gap-6 pb-2">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`text-[10px] tracking-[0.2em] uppercase transition-colors duration-300 ${
-                location === link.href
-                  ? "text-foreground/80"
-                  : "text-foreground/50 hover:text-foreground/70"
-              }`}
-              data-testid={`link-mobile-${link.href.slice(1)}`}
-            >
-              {link.label}
-            </Link>
-          ))}
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between gap-6 pb-2">
+          <Link
+            href="/"
+            className="block"
+            data-testid="link-home-mobile"
+          >
+            <img
+              src={logoImg}
+              alt="PALA LABS"
+              className="h-7 w-auto"
+              style={{ opacity: 0.8 }}
+            />
+          </Link>
+          <div className="flex items-center gap-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-[10px] tracking-[0.2em] uppercase transition-colors duration-300 ${
+                  location === link.href
+                    ? "text-foreground/80"
+                    : "text-foreground/50 hover:text-foreground/70"
+                }`}
+                data-testid={`link-mobile-${link.href.slice(1)}`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </nav>
