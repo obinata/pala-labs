@@ -48,7 +48,7 @@ export function AboutSection() {
               <p className="text-2xl md:text-3xl font-normal leading-[1.4] text-foreground/80 max-w-xl" style={{ fontFamily: "'Radley', 'Sawarabi Mincho', serif", color: "#494949", whiteSpace: "pre-line" }}>
                 {t(
                   "From counterculture to decentralised technologies — sovereignty is not given. It's built.",
-                  "カウンターカルチャーからソブリンテクノロジーの系譜：主権は与えられるものではなく、築くもの"
+                  "ソブリンテクノロジーの系譜：主権は与えられるものではなく、築くもの"
                 )}
               </p>
             </Reveal>
@@ -57,7 +57,7 @@ export function AboutSection() {
               <p className="mt-8 md:mt-12 text-sm leading-[1.8] max-w-lg" style={{ color: "#666666" }}>
                 {t(
                   "Technology has never been neutral. It can give its users more control, or quietly take it away. We believe technology should serve the people who use it. That vision carries a long lineage; from the hippies, the hackers, and the cypherpunks, to Bitcoin and the original promise of Web3. Pala Labs sees itself as part of that lineage.",
-                  <>現代のテクノロジーは、常に誰かの利益のために動いています。利用する者により大きな主導権を与えることもあれば、利便性の名のもと静かにそれを奪うこともあります。<br /><br />そんな時代の中で、私たちは、テクノロジーに使われる人間になるのではなく、テクノロジーを自らの未来を切り開く道具にすることが重要だと考えています。本来、そのビジョンには長い系譜がありました。1960年代のヒッピー、ハッカー、サイファーパンク、ビットコインの誕生、そしてWeb3の本来の精神。Pala Labsは、その流れの延長線上に存在しています。</>
+                  <>現代のテクノロジーは、常に誰かの利益のために動いています。利用する者により大きな主導権を与えることもあれば、利便性の名のもと静かにそれを奪うこともあります。<br /><br />そんな時代の中で、私たちは、テクノロジーに使われる人間になるのではなく、テクノロジーを自らの未来を切り開く道具にすることが重要だと考えています。本来、そのビジョンには長い系譜がありました。1960年代のカウンターカルチャーから生まれたヒッピー、そこに連なるハッカー、サイファーパンク、ビットコインの誕生、そしてWeb3.0の本来の精神。Pala Labsは、その流れの延長線上に存在しています。</>
                 )}
               </p>
             </Reveal>
