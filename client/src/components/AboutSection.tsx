@@ -84,7 +84,7 @@ export function AboutSection() {
             <Reveal delay={100}>
               <p className="text-2xl md:text-3xl font-normal leading-[1.4] max-w-lg ml-auto mb-8" style={{ fontFamily: "'Radley', 'Sawarabi Mincho', serif", color: "#494949" }}>
                 {t(
-                  "Choose technology to build freedom.",
+                  "Choose technology to preserve freedom.",
                   "自由を築くために、テクノロジーを選び取る"
                 )}
               </p>
