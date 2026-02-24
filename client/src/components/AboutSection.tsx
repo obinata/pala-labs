@@ -48,7 +48,7 @@ export function AboutSection() {
               <p className="text-2xl md:text-3xl font-normal leading-[1.4] text-foreground/80 max-w-xl" style={{ fontFamily: "'Radley', 'Sawarabi Mincho', serif", color: "#494949", whiteSpace: "pre-line" }}>
                 {t(
                   "From counterculture to decentralised technologies — sovereignty is not given. It's built.",
-                  "カウンターカルチャーから分散型テクノロジーの系譜：主権は与えられるものではなく、築くもの"
+                  "カウンターカルチャーからソブリンテクノロジーの系譜：主権は与えられるものではなく、築くもの"
                 )}
               </p>
             </Reveal>
